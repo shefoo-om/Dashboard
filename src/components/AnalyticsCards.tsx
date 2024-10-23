@@ -1,5 +1,9 @@
-import { Bell } from "lucide-react";
 import React from "react";
+
+import icon1 from "../assets/icons/users.png";
+import icon2 from "../assets/icons/files.png";
+import icon3 from "../assets/icons/money.png";
+import icon4 from "../assets/icons/image.png";
 
 const CardsItems = [
   {
@@ -8,6 +12,7 @@ const CardsItems = [
     number: "$55,000",
     persent: "+55",
     color: "text-green-500",
+    icon: icon3,
   },
   {
     id: 2,
@@ -15,6 +20,7 @@ const CardsItems = [
     number: "2300",
     persent: "+3",
     color: "text-green-500",
+    icon: icon1,
   },
   {
     id: 3,
@@ -22,6 +28,7 @@ const CardsItems = [
     number: "+3,462",
     persent: "-2",
     color: "text-red-600",
+    icon: icon2,
   },
   {
     id: 4,
@@ -29,6 +36,7 @@ const CardsItems = [
     number: "$103,430",
     persent: "+5",
     color: "text-green-500",
+    icon: icon4,
   },
 ];
 
@@ -53,9 +61,7 @@ export default function AnalyticsCards() {
             </div>
           </div>
           <div className="size-[48px] bg-bgBlue rounded-xl flex justify-center items-center">
-            <span className="text-white size-[22px]">
-              <Bell />
-            </span>
+            <img src={card.icon.src} className="text-white size-[22px]" />
           </div>
         </div>
       ))}
