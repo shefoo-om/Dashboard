@@ -2,8 +2,8 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-    darkMode: ["class"],
-    content: [
+  darkMode: ["class"],
+  content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
@@ -11,7 +11,11 @@ const config: Config = {
   theme: {
   	extend: {
   		colors: {
-			main_color: "#020515" ,
+			// background_gradient:'linear-gradient(90deg, rgba(224,225,226,0) 0%, rgba(224,225,226,1) 50%, rgba(224,225,226,0.1537227684042367) 100%)',
+			background_gradient:'rgb(224,225,226)',
+			secondColor:"rgb(160, 174, 192)",
+			bgBlue:"#0075FF",
+  			main_color: '#020515',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
@@ -51,8 +55,22 @@ const config: Config = {
   				'3': 'hsl(var(--chart-3))',
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
+  			},
+  			sidebar: {
+  				DEFAULT: 'transparent',
+  				foreground: 'white',
+  				primary: 'hsl(var(--sidebar-primary))',
+  				'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
+  				accent: 'white',
+  				'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
+  				border: 'transparent',
+  				ring: 'transparent'
   			}
   		},
+  		backgroundImage: {
+  			background_linear: 'linear-gradient(180deg, #0F123B 0%, #090D2E 59%, #020515 100%)',
+			//   background_gradient: 'linear-gradient(180deg, #0F123B 0%, #090D2E 59%, #020515 100%)',
+		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
@@ -62,4 +80,5 @@ const config: Config = {
   },
   plugins: [require("tailwindcss-animate")],
 };
+
 export default config;
