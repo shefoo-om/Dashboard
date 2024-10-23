@@ -34,10 +34,10 @@ const items2 = [
 ];
 
 export function AppSidebar() {
-  const pathname = usePathname(); // Use usePathname to get the current path
+  const pathname = usePathname();
 
   return (
-    <Sidebar className="bg-[#060B26] h-screen rounded-3xl m-2 p-4">
+    <Sidebar className="sidebarStyle bg-[#060B26] h-[92.5%] rounded-3xl my-6 ml-2">
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel className="uppercase m-3 text-center font-semibold text-xl">

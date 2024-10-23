@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import bg from "../assets/bg.png";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,15 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className="text-white h-screen"
-        style={{
-          backgroundImage: `url(${bg.src})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        
-        }}
-      >
+      <body>
         {children}
       </body>
     </html>
