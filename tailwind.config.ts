@@ -13,6 +13,8 @@ const config: Config = {
   		colors: {
 			// background_gradient:'linear-gradient(90deg, rgba(224,225,226,0) 0%, rgba(224,225,226,1) 50%, rgba(224,225,226,0.1537227684042367) 100%)',
 			background_gradient:'rgb(224,225,226)',
+			secondColor:"rgb(160, 174, 192)",
+			bgBlue:"#0075FF",
   			main_color: '#020515',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',

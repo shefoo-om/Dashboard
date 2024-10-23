@@ -62,7 +62,7 @@ export function AppSidebar() {
                       <div
                         className={`w-[32px] h-[32px] rounded-[12px] transition-colors felx flex items-center justify-center ${
                           pathname === item.url
-                            ? "bg-[#0075FF]"
+                            ? "bg-bgBlue"
                             : "bg-[#1A1F37]"
                         }`}
                       >
@@ -70,7 +70,7 @@ export function AppSidebar() {
                           className={`w-[15px] h-[15px] font-bold justify-center ${
                             pathname === item.url
                               ? "text-white"
-                              : "text-[#0075FF]"
+                              : "text-bgBlue"
                           }`}
                         />
                       </div>
@@ -103,7 +103,7 @@ export function AppSidebar() {
                       <div
                         className={`w-[32px] h-[32px] rounded-[12px] transition-colors felx flex items-center justify-center ${
                           pathname === item.url
-                            ? "bg-[#0075FF]"
+                            ? "bg-bgBlue"
                             : "bg-[#1A1F37]"
                         }`}
                       >
@@ -111,7 +111,7 @@ export function AppSidebar() {
                           className={`w-[15px] h-[15px] justify-center ${
                             pathname === item.url
                               ? "text-white"
-                              : "text-[#0075FF]"
+                              : "text-bgBlue"
                           }`}
                         />
                       </div>
