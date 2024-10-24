@@ -46,7 +46,7 @@ export default function AnalyticsCards() {
       {CardsItems.map((card) => (
         <div
           key={card.id}
-          className="analyticsCards h-[87px] max-2xl:w-[48%] max-md:w-11/12 w-[24%] bg-black rounded-2xl flex justify-between items-center p-5 m-auto"
+          className="analyticsCards h-[87px] w-[24%] max-2xl:w-[48%] max-md:w-11/12 bg-black rounded-2xl flex justify-between items-center p-5 m-auto"
         >
           <div className="w-4/6 flex flex-wrap">
             <div className="w-full text-secondColor text-xs font-semibold">
