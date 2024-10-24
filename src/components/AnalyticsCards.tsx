@@ -61,7 +61,7 @@ export default function AnalyticsCards() {
             </div>
           </div>
           <div className="size-[48px] bg-bgBlue rounded-xl flex justify-center items-center">
-            <img src={card.icon.src} className="text-white size-[22px]" />
+            <img src={card.icon.src} alt="" className="text-white size-[22px]" />
           </div>
         </div>
       ))}
