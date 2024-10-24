@@ -106,7 +106,7 @@ body {
 }
 
 nav {
-  backdrop-filter: blur(2.625rem);
+  backdrop-filter: blur(120px);
   border-color: rgba(226, 232, 240, 0.3) !important;
 }
 
@@ -115,5 +115,42 @@ nav {
     127.09deg,
     rgba(6, 11, 40, 0.94) 19.41%,
     rgba(10, 14, 35, 0.49) 76.65%
+  );
+}
+.firstCardFrontCards {
+  backdrop-filter: blur(120px);
+  background: url("../assets/FirstCardbg.png") 50% center / cover;
+  box-shadow: rgba(0, 0, 0, 0.05) 0rem 1.25rem 1.6875rem 0rem;
+}
+
+.secondCardFrontCards {
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(
+    127.09deg,
+    rgba(6, 11, 40, 0.94) 19.41%,
+    rgba(10, 14, 35, 0.49) 76.65%
+  );
+  backdrop-filter: blur(120px);
+}
+.staticRate {
+  /* position: absolute; */
+  width: 212px;
+  height: 170.8px;
+  left: calc(50% - 212px / 2 + 109.12px);
+  top: 0;
+  background: linear-gradient(
+    263.91deg,
+    #0075ff 22.07%,
+    rgba(0, 117, 255, 0) 80.63%
+  );
+  border-radius: 35px;
+  transform: matrix(0.5, -0.87, -0.87, -0.5, 0, 0);
+}
+.littleCards {
+  border-radius: 20px;
+  background: linear-gradient(
+    126.97deg,
+    rgb(6, 11, 40) 28.26%,
+    rgb(10, 14, 35) 91.2%
   );
 }

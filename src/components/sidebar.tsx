@@ -37,7 +37,7 @@ export function AppSidebar() {
   const pathname = usePathname();
 
   return (
-    <Sidebar className="sidebarStyle bg-[#060B26] h-[92.5%] rounded-3xl my-6 ml-2">
+    <Sidebar className="sidebarStyle bg-[#060B26] h-[92.5%] w-[250px] rounded-3xl my-4 mx-4">
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel className="uppercase m-3 text-center font-semibold text-xl">

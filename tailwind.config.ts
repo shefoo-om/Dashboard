@@ -10,6 +10,9 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+		height:{
+			cardHeight:"340px"
+		},
   		colors: {
 			// background_gradient:'linear-gradient(90deg, rgba(224,225,226,0) 0%, rgba(224,225,226,1) 50%, rgba(224,225,226,0.1537227684042367) 100%)',
 			background_gradient:'rgb(224,225,226)',
