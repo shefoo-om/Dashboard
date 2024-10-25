@@ -3,6 +3,7 @@ import { Navbar } from "@/components/navbar";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import AnalyticsCards from "@/components/AnalyticsCards";
 import FrontCard from "@/components/frontCard";
+import ChartsCards from "@/components/ChartsCards";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
           <Navbar route="Dashboard" />
           <AnalyticsCards />
           <FrontCard />
+          <ChartsCards />
           <div className="h-[1000px]">how are you</div>
         </main>
       </SidebarProvider>

@@ -139,25 +139,26 @@ const ThirdCard = (
           <p className="">Total Score</p>
         </div>
         <svg className="size-44 max-xl:size-52" style={{
-          transform: "rotate(-90deg)", overflow: "visible" }} xmlns="http://www.w3.org/2000/svg" viewBox="100 100 200 200">
-        <linearGradient id="grd_gryamkf4rzq5" x1="0%" y1="0%" x2="0%" y2="100%" gradientTransform="rotate(90, .5, .5)"><stop offset="0" stopColor="rgba(5, 205, 153, 0)"></stop><stop offset="100" stopColor="#05CD99"></stop></linearGradient>
-        <circle cx="200" cy="200" r="92.5" stroke="transparent" strokeWidth="15" fill="none"></circle>
-        <circle cx="200" cy="200" r="92.5" fill="none" strokeWidth="15" strokeDasharray="581.1946409141117" strokeDashoffset="174.3583922742335" strokeLinecap="round" stroke="url(#grd_gryamkf4rzq5)" style={{ transition: "stroke-dashoffset 400ms" }}></circle>
-      </svg>
+          transform: "rotate(-90deg)", overflow: "visible"
+        }} xmlns="http://www.w3.org/2000/svg" viewBox="100 100 200 200">
+          <linearGradient id="grd_gryamkf4rzq5" x1="0%" y1="0%" x2="0%" y2="100%" gradientTransform="rotate(90, .5, .5)"><stop offset="0" stopColor="rgba(5, 205, 153, 0)"></stop><stop offset="100" stopColor="#05CD99"></stop></linearGradient>
+          <circle cx="200" cy="200" r="92.5" stroke="transparent" strokeWidth="15" fill="none"></circle>
+          <circle cx="200" cy="200" r="92.5" fill="none" strokeWidth="15" strokeDasharray="581.1946409141117" strokeDashoffset="174.3583922742335" strokeLinecap="round" stroke="url(#grd_gryamkf4rzq5)" style={{ transition: "stroke-dashoffset 400ms" }}></circle>
+        </svg>
+      </div>
     </div>
-  </div>
   </div >
 );
 export default function FrontCard() {
   return (
     <div className="w-full flex flex-wrap justify-between items-center pt-[18px] gap-y-5">
-      <div className="firstCardFrontCards w-[41%] max-xl:w-full flex rounded-2xl">
+      <div className="firstCardFrontCards w-[41%] max-xl:w-full flex ">
         {FirstCard}
       </div>
-      <div className="secondCardFrontCards w-[26%] max-xl:w-[48%] max-lg:w-full rounded-2xl">
+      <div className="MainCards w-[26%] max-xl:w-[48%] max-lg:w-full ">
         {SecondCard}
       </div>
-      <div className="secondCardFrontCards w-[30%] max-xl:w-[48%] max-lg:w-full rounded-2xl">
+      <div className="MainCards w-[30%] max-xl:w-[48%] max-lg:w-full">
         {ThirdCard}
       </div>
     </div>
