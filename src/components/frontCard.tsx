@@ -138,7 +138,7 @@ const ThirdCard = (
           <p className="text-white text-5xl font-bold">9.4</p>
           <p className="">Total Score</p>
         </div>
-        <svg className="size-44 max-xl:size-52" style={{
+        <svg className="size-44 max-md:size-40 max-xl:size-52" style={{
           transform: "rotate(-90deg)", overflow: "visible"
         }} xmlns="http://www.w3.org/2000/svg" viewBox="100 100 200 200">
           <linearGradient id="grd_gryamkf4rzq5" x1="0%" y1="0%" x2="0%" y2="100%" gradientTransform="rotate(90, .5, .5)"><stop offset="0" stopColor="rgba(5, 205, 153, 0)"></stop><stop offset="100" stopColor="#05CD99"></stop></linearGradient>

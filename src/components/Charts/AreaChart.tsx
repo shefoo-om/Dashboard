@@ -38,7 +38,7 @@ const CustomTooltip = ({ active, payload, label }) => {
 };
 export default function AreaChartComponent() {
     return (
-        <ResponsiveContainer width="100%" height="90%">
+        <ResponsiveContainer width="100%" minWidth={500} height="90%">
             <AreaChart data={data}
                 margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
                 <defs>

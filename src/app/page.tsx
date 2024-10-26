@@ -10,7 +10,7 @@ export default function Home() {
     <div>
       <SidebarProvider>
         <AppSidebar />
-        <main className="w-full mx-12 relative">
+        <main className="w-full mx-12 max-lg:px-5 max-sm:mx-0 relative">
           {/* <SidebarTrigger /> */}
           <Navbar route="Dashboard" />
           <AnalyticsCards />
