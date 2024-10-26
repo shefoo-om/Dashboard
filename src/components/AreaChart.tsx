@@ -53,7 +53,7 @@ export default function AreaChartComponent() {
                 </defs>
                 <XAxis dataKey="name" tick={{ fill: "white" }} />
                 <YAxis axisLine={false} tick={{ fill: "white" }} />
-                <CartesianGrid strokeDasharray="3 3" />
+                <CartesianGrid strokeDasharray="3 3"  height={10}/>
                 <Tooltip content={<CustomTooltip active={undefined} payload={undefined} label={undefined} />} />
                 <Area type="monotone" dataKey="Websites" stroke="#0075FF" fillOpacity={1} fill="url(#colorUv)" />
                 <Area type="monotone" dataKey="Mopile Apps" stroke="#2CD9FF" fillOpacity={1} fill="url(#colorPv)" />
