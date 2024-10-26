@@ -22,7 +22,7 @@ const FirstCard = (
 const SecondCard = (
   <div className="h-cardHeight w-full flex flex-col justify-between py-6 pb-8">
     <div className="px-4">
-      <p className="font-bold text-lg">Satisfaction Rate</p>
+      <p className="headerTitle">Satisfaction Rate</p>
       <p className="text-secondColor text-sm">From all projects</p>
     </div>
     <div className="flex w-full justify-center">
@@ -101,7 +101,7 @@ const SecondCard = (
 const ThirdCard = (
   <div className="h-cardHeight w-full flex flex-col justify-between py-6 pb-8">
     <div className="w-full flex flex-nowrap justify-between px-4 mb-10">
-      <h1 className="font-bold text-lg">Referral Tracking</h1>
+      <p className="headerTitle">Referral Tracking</p>
       <Link
         href={""}
         className="size-[37px] bg-[#1A1F37] rounded-2xl flex justify-center items-center"
