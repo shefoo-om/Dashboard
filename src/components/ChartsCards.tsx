@@ -50,16 +50,16 @@ const ChartCard = (<>
     </div>
 </>);
 const LineChart = (<>
-    <div className="w-full h-[60%] pr-5">
+    <div className="w-full h-[60%]">
         <BarChartCom />
     </div>
-    <div className="w-full h-[10%] px-5">
+    <div className="w-full h-[10%]">
         <div className=" h-[10%] w-full flex flex-col">
             <p className="headerTitle"> Active Users </p>
             <p className="text-sm font-semibold text-secondColor"> <span className="text-green-500">(+23) more</span> than last week</p>
         </div>
     </div>
-    <div className="w-full h-[20%] h-[117px] px-5 flex flex-nowrap justify-between items-center pt-4">
+    <div className="w-full h-[20%] h-[117px] flex flex-nowrap justify-between items-center pt-4">
         {CardsItems.map((item) => (
             <div key={item.id} className="w-[24%] flex flex-wrap gap-y-2">
                 <div className="flex w-5/6 items-center">
@@ -70,7 +70,7 @@ const LineChart = (<>
                 </div>
                 <div className="w-full flex flex-wrap gap-y-1">
                     <p className="w-full text-lg ml-2">{item.number}</p>
-                    <Progress value={item.percent}  className="w-3/4 mx-auto"/>
+                    <Progress value={item.percent} className="w-3/4 mx-auto" />
                 </div>
             </div>
         ))}
@@ -81,10 +81,10 @@ const LineChart = (<>
 export default function ChartsCards() {
     return (
         <div className="w-full flex flex-wrap justify-between items-center gap-y-5 pt-[18px]">
-            <div className="MainCards h-[445px] w-[59%] max-xl:w-[49%] max-lg:w-full flex flex-col justify-between items-center pt-8 px-5">
+            <div className="MainCards h-[445px] w-[59%] max-xl:w-[49%] max-lg:w-full flex flex-col justify-between items-center py-6 px-5">
                 {ChartCard}
             </div>
-            <div className="MainCards h-[445px] w-[39%] max-xl:w-[49%] max-lg:w-full flex flex-col justify-between items-center py-8">
+            <div className="MainCards h-[445px] w-[39%] max-xl:w-[49%] max-lg:w-full flex flex-col justify-between items-center py-6 px-5">
                 {LineChart}
             </div>
         </div>
