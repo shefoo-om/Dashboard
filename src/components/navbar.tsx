@@ -1,6 +1,7 @@
 import { Home, UserCog } from "lucide-react";
 import Link from "next/link";
 import NotificationBox from "./NotificationBox";
+import { SidebarTrigger } from "./ui/sidebar";
 type Location = {
   route: string;
 };
@@ -23,6 +24,9 @@ export function Navbar({ route }: Location) {
           <p className="text-sm">Sign in</p>
         </Link>
         <div>
+          <SidebarTrigger className="size-7 hover:bg-transparent hover:text-white" />
+        </div>
+        <div className="flex items-center pt-1">
           <NotificationBox />
         </div>
       </div>
