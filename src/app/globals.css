@@ -119,7 +119,10 @@ body {
     rgba(255, 255, 255, 0)
   ) !important;
 }
-
+.boxShadoooow{
+  box-shadow: rgba(0, 0, 0, 0.05) 0rem 1.25rem 1.6875rem 0rem;
+  border-radius: 8px;
+}
 nav {
   backdrop-filter: blur(120px);
   border-color: rgba(226, 232, 240, 0.3) !important;

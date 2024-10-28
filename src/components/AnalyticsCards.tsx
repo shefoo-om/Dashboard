@@ -43,7 +43,7 @@ const CardsItems = [
 
 export default function AnalyticsCards() {
   return (
-    <div className="pt-6 flex flex-wrap gap-3 justify-between items-center w-full">
+    <div className="flex flex-wrap gap-3 justify-between items-center w-full">
       {CardsItems.map((card) => (
         <div
           key={card.id}

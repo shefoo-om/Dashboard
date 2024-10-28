@@ -56,8 +56,8 @@ const FirstCard = (
                 <span className="ml-1">this month</span>
             </div>
         </div>
-        <div className="w-full  h-[80%]">
-            <Table className="w-full min-w-[550px] h-full overflow-scroll bg-transparent">
+        <div className="w-full h-[80%] boxShadoooow">
+            <Table className="w-full min-w-[550px] rounded-[4px] h-full overflow-scroll bg-transparent">
                 <TableHeader>
                     <TableRow>
                         <TableHead className="w-[30%]">COMPANIES</TableHead>
@@ -153,7 +153,7 @@ const SecondCard = (
 
 export default function LastCard() {
     return (
-        <div className="w-full flex flex-wrap justify-between items-center py-[18px] gap-y-5">
+        <div className="w-full flex flex-wrap justify-between items-center pt-[18px] gap-y-5">
             <div className="MainCards w-[65%] max-lg:w-[49%] max-md:w-full h-[561px] py-6 px-5">
                 {FirstCard}
             </div>
