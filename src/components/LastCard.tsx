@@ -135,7 +135,7 @@ const SecondCard = (
                 <span className="ml-1">this month</span>
             </div>
         </div>
-        <div className="w-full min-w-[220px] h-[80%] overflow-scroll flex flex-col justify-between">
+        <div className="w-full min-w-[220px] h-[80%] overflow-auto flex flex-col justify-between">
             {ordersDetails.map((ele) => (
                 <div key={ele.id} className="flex w-full justify-between items-center">
                     <div className="size-7 bg-transparent">

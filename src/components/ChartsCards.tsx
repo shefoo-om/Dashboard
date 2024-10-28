@@ -59,7 +59,7 @@ const LineChart = (<>
             <p className="text-sm font-semibold text-secondColor"> <span className="text-green-500">(+23) more</span> than last week</p>
         </div>
     </div>
-    <div className="w-full h-[20%] h-[120px] flex flex-nowrap justify-between items-center pt-4 overflow-auto">
+    <div className="w-full h-[20%] min-h-[130px] flex flex-nowrap justify-between items-center pt-4 overflow-x-auto">
         {CardsItems.map((item) => (
             <div key={item.id} className="w-[24%] min-w-[85px] flex flex-wrap gap-y-2">
                 <div className="flex w-5/6 items-center">
