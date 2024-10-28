@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 import {
     Table,
     TableBody,
@@ -7,15 +9,30 @@ import {
     TableRow,
 } from "@/components/ui/table"
 import { Progress } from "./ui/progress"
+// icons
+import icon1 from "../assets/imgForTable/ch.png"
+import icon2 from "../assets/imgForTable/ad1.png"
+import icon3 from "../assets/imgForTable/fi.png"
+import icon4 from "../assets/imgForTable/spotify.png"
+import icon5 from "../assets/imgForTable/ad.png"
+import icon6 from "../assets/imgForTable/re.png"
+
+// imgs of member
+import mem1 from "../assets/imgForTable/member/raymond.jpg"
+import mem2 from "../assets/imgForTable/member/ressler.png"
+import mem3 from "../assets/imgForTable/member/kem.png"
+import mem4 from "../assets/imgForTable/member/glen.png"
+import mem5 from "../assets/imgForTable/member/funny.png"
+import mem6 from "../assets/imgForTable/member/bos.png"
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const projectDetails = [
-    { id: 1, icon: "", company: "Chakra Vision UI Version", members: [""], budget: "14,555", percent: 60 },
-    { id: 1, icon: "", company: "Add Progress Track", members: [""], budget: "3,000", percent: 10 },
-    { id: 1, icon: "", company: "Fix Platform Errors", members: [""], budget: "Not Set", percent: 100 },
-    { id: 1, icon: "", company: "Launch our Mobile App", members: [""], budget: "20,500", percent: 100 },
-    { id: 1, icon: "", company: "Add the New Pricing Page", members: [""], budget: "500", percent: 25 },
-    { id: 1, icon: "", company: "Redesign New Online Shop", members: [""], budget: "2000", percent: 40 }
+    { id: 1, icon: icon1, company: "Chakra Vision UI Version", members: [mem1, mem2, mem3, mem4], budget: "$14,555", percent: 60 },
+    { id: 1, icon: icon2, company: "Add Progress Track", members: [mem1], budget: "$3,000", percent: 10 },
+    { id: 1, icon: icon3, company: "Fix Platform Errors", members: [mem5, mem6, mem5], budget: "Not Set", percent: 100 },
+    { id: 1, icon: icon4, company: "Launch our Mobile App", members: [mem3, mem2], budget: "$20,500", percent: 100 },
+    { id: 1, icon: icon5, company: "Add the New Pricing Page", members: [mem1, mem5, mem4, mem6], budget: "$500", percent: 25 },
+    { id: 1, icon: icon6, company: "Redesign New Online Shop", members: [mem5], budget: "$2000", percent: 40 }
 ]
 
 const FirstCard = (
@@ -41,8 +58,8 @@ const FirstCard = (
                 <span className="ml-1">this month</span>
             </div>
         </div>
-        <div className="w-full h-[80%] overflow-auto">
-            <Table>
+        <div className="w-full  h-[80%]">
+            <Table className="min-w-[550px] h-full overflow-scroll bg-transparent w-full">
                 <TableHeader>
                     <TableRow>
                         <TableHead className="w-[30%]">COMPANIES</TableHead>
@@ -51,18 +68,38 @@ const FirstCard = (
                         <TableHead className="text-center w-[19%]">COMPLETION</TableHead>
                     </TableRow>
                 </TableHeader>
-                <TableBody>
-                    <TableRow>
-                        <TableCell className="font-medium">INV001</TableCell>
-                        <TableCell>Paid</TableCell>
-                        <TableCell>$250.00</TableCell>
-                        <TableCell>
-                            <div className="w-full flex flex-wrap">
-                                <p className="w-3/4 mx-auto">30%</p>
-                                <Progress value={30} className="w-3/4 mx-auto" />
-                            </div>
-                        </TableCell>
-                    </TableRow>
+                <TableBody className="h-[390px]">
+                    {projectDetails.map((ele) => (
+                        <TableRow key={ele.id} className="border-t-[1px] border-[#222a48]">
+                            <TableCell>
+                                <div className="w-full flex items-center">
+                                    <img src={ele.icon.src} alt="" className="size-5 rounded-md bg-transparent mr-3" />
+                                    {ele.company}
+                                </div>
+                            </TableCell>
+                            <TableCell>
+                                <div className="flex items-center justify-center w-max text-center py-2 opacity-100">
+                                    {ele.members.map((member, index) => (
+                                        <div key={index} className="size-6 rounded-full border-2 border-[#121241] overflow-hidden ml-[-10px] hover:z-20 duration-500 ">
+                                            <img
+                                                src={member.src}
+                                                alt={`Member ${index + 1}`}
+                                                className="w-full h-full"
+                                            />
+                                        </div>
+
+                                    ))}
+                                </div>
+                            </TableCell>
+                            <TableCell>{ele.budget}</TableCell>
+                            <TableCell>
+                                <div className="w-full flex flex-wrap">
+                                    <p className="w-3/4 mx-auto">{ele.percent}%</p>
+                                    <Progress value={ele.percent} className="w-3/4 mx-auto" />
+                                </div>
+                            </TableCell>
+                        </TableRow>
+                    ))}
                 </TableBody>
             </Table>
 
@@ -98,11 +135,11 @@ const SecondCard = (
 
 export default function LastCard() {
     return (
-        <div className="w-full flex flex-wrap justify-between items-center pt-[18px] gap-y-5">
+        <div className="w-full flex flex-wrap justify-between items-center py-[18px] gap-y-5">
             <div className="MainCards w-[65%] max-lg:w-[49%] max-md:w-full h-[561px] py-6 px-5">
                 {FirstCard}
             </div>
-            <div className="MainCards w-[30%] max-lg:w-[49%] max-md:w-full h-[561px] py-6 px-5">
+            <div className="MainCards w-[34%] max-lg:w-[49%] max-md:w-full h-[561px] py-6 px-5">
                 {SecondCard}
             </div>
         </div>

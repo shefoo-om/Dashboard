@@ -14,7 +14,6 @@ const config: Config = {
 			cardHeight:"340px"
 		},
   		colors: {
-			// background_gradient:'linear-gradient(90deg, rgba(224,225,226,0) 0%, rgba(224,225,226,1) 50%, rgba(224,225,226,0.1537227684042367) 100%)',
 			background_gradient:'rgb(224,225,226)',
 			secondColor:"rgb(160, 174, 192)",
 			bgBlue:"#0075FF",
@@ -72,13 +71,15 @@ const config: Config = {
   		},
   		backgroundImage: {
   			background_linear: 'linear-gradient(180deg, #0F123B 0%, #090D2E 59%, #020515 100%)',
-			//   background_gradient: 'linear-gradient(180deg, #0F123B 0%, #090D2E 59%, #020515 100%)',
 		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+  		},
+		// boxShadow:{
+		// 	// boxShaddow:"rgba(0, 0, 0, 0.05) 0rem -1.25rem 1.6875rem 0rem"
+		// }
   	}
   },
   plugins: [require("tailwindcss-animate")],

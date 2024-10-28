@@ -11,7 +11,7 @@ export default function Home() {
     <div>
       <SidebarProvider>
         <AppSidebar />
-        <main className="w-full mx-12 max-lg:px-5 max-sm:mx-0 relative">
+        <main className="w-full mx-8 max-lg:px-5 max-sm:mx-0 relative">
           <Navbar route="Dashboard" />
           <AnalyticsCards />
           <FrontCard />
