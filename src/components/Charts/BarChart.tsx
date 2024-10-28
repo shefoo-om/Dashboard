@@ -33,7 +33,7 @@ const CustomTooltip = ({ active, payload, label }) => {
 
 export default function BarChartCom() {
   return (
-    <ResponsiveContainer width="100%" height="100%">
+    <ResponsiveContainer width="100%" height="100%" className="ml-[-15px]">
       <BarChart data={data}>
         <CartesianGrid strokeDasharray="3 3" height={0} />
         <XAxis hide dataKey="name" />

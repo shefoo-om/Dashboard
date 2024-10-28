@@ -59,18 +59,18 @@ const LineChart = (<>
             <p className="text-sm font-semibold text-secondColor"> <span className="text-green-500">(+23) more</span> than last week</p>
         </div>
     </div>
-    <div className="w-full h-[20%] h-[117px] flex flex-nowrap justify-between items-center pt-4">
+    <div className="w-full h-[20%] h-[120px] flex flex-nowrap justify-between items-center pt-4 overflow-auto">
         {CardsItems.map((item) => (
-            <div key={item.id} className="w-[24%] flex flex-wrap gap-y-2">
+            <div key={item.id} className="w-[24%] min-w-[85px] flex flex-wrap gap-y-2">
                 <div className="flex w-5/6 items-center">
                     <div className="size-6 bg-bgBlue rounded-[6px] flex justify-center items-center">
                         <img src={item.icon.src} alt="" className="text-white size-[15px]" />
                     </div>
                     <p className="text-secondColor text-sm ml-2 font-medium">{item.title}</p>
                 </div>
-                <div className="w-full flex flex-wrap gap-y-1">
-                    <p className="w-full text-lg ml-2">{item.number}</p>
-                    <Progress value={item.percent} className="w-3/4 mx-auto" />
+                <div className="w-[90%] flex flex-wrap gap-y-1">
+                    <p className="w-full text-base mx-auto">{item.number}</p>
+                    <Progress value={item.percent} className="mx-auto" />
                 </div>
             </div>
         ))}

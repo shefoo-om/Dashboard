@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-
 import {
     Table,
     TableBody,
@@ -25,7 +24,6 @@ import mem4 from "../assets/imgForTable/member/glen.png"
 import mem5 from "../assets/imgForTable/member/funny.png"
 import mem6 from "../assets/imgForTable/member/bos.png"
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const projectDetails = [
     { id: 1, icon: icon1, company: "Chakra Vision UI Version", members: [mem1, mem2, mem3, mem4], budget: "$14,555", percent: 60 },
     { id: 1, icon: icon2, company: "Add Progress Track", members: [mem1], budget: "$3,000", percent: 10 },
@@ -59,7 +57,7 @@ const FirstCard = (
             </div>
         </div>
         <div className="w-full  h-[80%]">
-            <Table className="min-w-[550px] h-full overflow-scroll bg-transparent w-full">
+            <Table className="w-full min-w-[550px] h-full overflow-scroll bg-transparent">
                 <TableHeader>
                     <TableRow>
                         <TableHead className="w-[30%]">COMPANIES</TableHead>
@@ -102,12 +100,20 @@ const FirstCard = (
                     ))}
                 </TableBody>
             </Table>
-
         </div>
     </div>
 )
+
+const ordersDetails = [
+    { id: 1, icon: icon1, title: "$2400, Design changes", history: "22 DEC 7:20 PM" },
+    { id: 2, icon: icon2, title: "New order #1832412", history: "21 DEC 11 PM" },
+    { id: 3, icon: icon3, title: "Server payments for April", history: "21 DEC 9:34 PM" },
+    { id: 4, icon: icon5, title: "New card added for order #4395133", history: "20 DEC 2:20 AM" },
+    { id: 5, icon: icon4, title: "New card added for order #4395133", history: "18 DEC 4:54 AM" },
+    { id: 6, icon: icon6, title: "New order #9583120", history: "17 DEC" },
+]
 const SecondCard = (
-    <div className="flex flex-col items-center">
+    <div className="h-full flex flex-col items-center gap-5">
         <div className=" h-[10%] w-full flex flex-col">
             <p className="headerTitle">Orders overview</p>
             <div className="text-sm font-semibold text-secondColor flex w-full items-center">
@@ -124,12 +130,24 @@ const SecondCard = (
                     >
                         <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
                     </svg>
-                    30 done
+                    +30%
                 </span>
                 <span className="ml-1">this month</span>
             </div>
         </div>
-        <div className="w-full"></div>
+        <div className="w-full min-w-[220px] h-[80%] overflow-scroll flex flex-col justify-between">
+            {ordersDetails.map((ele) => (
+                <div key={ele.id} className="flex w-full justify-between items-center">
+                    <div className="size-7 bg-transparent">
+                        <img src={ele.icon.src} alt="" className="size-4 bg-transparent rounded-md" />
+                    </div>
+                    <div className="flex flex-col gap-1 w-[90%]">
+                        <p className="text-[15px] font-bold">{ele.title}</p>
+                        <p className="text-[13px] text-secondColor font-semibold"> {ele.history}</p>
+                    </div>
+                </div>
+            ))}
+        </div>
     </div>
 )
 
