@@ -41,37 +41,35 @@ export function AppSidebar() {
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel className="uppercase m-3 text-center font-semibold text-xl">
-            <span className="text-center m-auto">logo</span>
+            <span className="text-center m-auto">Dashboard</span>
           </SidebarGroupLabel>
-          <SidebarGroupContent className="mt-5">
+          <hr className="hrStyle" />
+          <SidebarGroupContent className="mt-2">
             <SidebarMenu>
               {items1.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton
                     asChild
-                    className={`w-full w-full h-14 active:bg-transparent rounded-2xl ${
-                      pathname === item.url
-                        ? "bg-[#1A1F37] hover:bg-[#1A1F37]"
-                        : "bg-transparent hover:bg-transparent"
-                    }`}
+                    className={`w-full w-full h-14 active:bg-transparent rounded-2xl ${pathname === item.url
+                      ? "bg-[#1A1F37] hover:bg-[#1A1F37]"
+                      : "bg-transparent hover:bg-transparent"
+                      }`}
                   >
                     <Link
                       href={item.url}
                       className="font-semibold flex gap-x-4"
                     >
                       <div
-                        className={`w-[32px] h-[32px] rounded-[12px] transition-colors felx flex items-center justify-center ${
-                          pathname === item.url
-                            ? "bg-bgBlue"
-                            : "bg-[#1A1F37]"
-                        }`}
+                        className={`w-[32px] h-[32px] rounded-[12px] transition-colors felx flex items-center justify-center ${pathname === item.url
+                          ? "bg-bgBlue"
+                          : "bg-[#1A1F37]"
+                          }`}
                       >
                         <item.icon
-                          className={`w-[15px] h-[15px] font-bold justify-center ${
-                            pathname === item.url
-                              ? "text-white"
-                              : "text-bgBlue"
-                          }`}
+                          className={`w-[15px] h-[15px] font-bold justify-center ${pathname === item.url
+                            ? "text-white"
+                            : "text-bgBlue"
+                            }`}
                         />
                       </div>
                       <span className="text-[#FFFFFF] text-sm">
@@ -90,29 +88,26 @@ export function AppSidebar() {
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton
                     asChild
-                    className={`w-full w-52 h-14 active:bg-transparent rounded-2xl ${
-                      pathname === item.url
-                        ? "bg-[#1A1F37] hover:bg-[#1A1F37]"
-                        : "bg-transparent hover:bg-transparent"
-                    }`}
+                    className={`w-full w-52 h-14 active:bg-transparent rounded-2xl ${pathname === item.url
+                      ? "bg-[#1A1F37] hover:bg-[#1A1F37]"
+                      : "bg-transparent hover:bg-transparent"
+                      }`}
                   >
                     <Link
                       href={item.url}
                       className="font-semibold flex gap-x-4"
                     >
                       <div
-                        className={`w-[32px] h-[32px] rounded-[12px] transition-colors felx flex items-center justify-center ${
-                          pathname === item.url
-                            ? "bg-bgBlue"
-                            : "bg-[#1A1F37]"
-                        }`}
+                        className={`w-[32px] h-[32px] rounded-[12px] transition-colors felx flex items-center justify-center ${pathname === item.url
+                          ? "bg-bgBlue"
+                          : "bg-[#1A1F37]"
+                          }`}
                       >
                         <item.icon
-                          className={`w-[15px] h-[15px] justify-center ${
-                            pathname === item.url
-                              ? "text-white"
-                              : "text-bgBlue"
-                          }`}
+                          className={`w-[15px] h-[15px] justify-center ${pathname === item.url
+                            ? "text-white"
+                            : "text-bgBlue"
+                            }`}
                         />
                       </div>
                       <span className="text-[#FFFFFF] text-sm">

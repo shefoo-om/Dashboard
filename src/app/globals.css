@@ -105,6 +105,21 @@ body {
   );
 }
 
+.hrStyle {
+  flex-shrink: 0;
+  border-width: 0px 0px medium;
+  border-style: solid solid none;
+  height: 0.0625rem;
+  margin: 0.5rem 0px;
+  opacity: 0.25;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 117, 255, 0),
+    rgb(255, 255, 255),
+    rgba(255, 255, 255, 0)
+  ) !important;
+}
+
 nav {
   backdrop-filter: blur(120px);
   border-color: rgba(226, 232, 240, 0.3) !important;
@@ -118,7 +133,7 @@ nav {
   );
 }
 
-.headerTitle{
+.headerTitle {
   color: white;
   font-weight: 700;
   font-size: 18px;
@@ -164,4 +179,3 @@ nav {
     rgb(10, 14, 35) 91.2%
   );
 }
-
