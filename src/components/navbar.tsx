@@ -14,9 +14,9 @@ export function Navbar({ route }: Location) {
             <Home className="size-3" />
           </Link>
           <p>/</p>
-          <p>{route}</p>
+          <p className="capitalize">{route}</p>
         </div>
-        <div className="text-base">{route}</div>
+        <div className="text-base capitalize">{route}</div>
       </div>
       <div className="flex flex-nowrap items-center gap-2">
         <Link href={"/sign-in"} className="flex flex-nowrap gap-1 items-center">
