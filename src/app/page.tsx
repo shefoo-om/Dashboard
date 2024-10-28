@@ -5,7 +5,7 @@ import LastCard from "@/components/LastCard";
 
 export default function Home() {
   return (
-    <div>
+    <div className="pt-2">
       <AnalyticsCards />
       <FrontCard />
       <ChartsCards />
