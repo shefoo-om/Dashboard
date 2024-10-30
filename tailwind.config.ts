@@ -70,7 +70,7 @@ const config: Config = {
   			}
   		},
   		backgroundImage: {
-  			background_linear: 'linear-gradient(180deg, #0F123B 0%, #090D2E 59%, #020515 100%)',
+  			// background_linear: 'linear-gradient(180deg, #0F123B 0%, #090D2E 59%, #020515 100%)',
 		},
   		borderRadius: {
   			lg: 'var(--radius)',
