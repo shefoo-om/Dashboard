@@ -1,4 +1,4 @@
-import type { BillingInformationDetails } from "@/types/Billing"
+import type { BillingInformationDetails, TransactionDetails } from "@/types/Billing"
 import { Pen, Trash } from "lucide-react"
 
 const BillingInformationDetails: BillingInformationDetails[] = [
@@ -6,6 +6,16 @@ const BillingInformationDetails: BillingInformationDetails[] = [
   { id: 2, name: "oliver liam", company: "viking burrito", email: "oliver@burrito.com", vatNumber: "FRB1235476" },
   { id: 3, name: "oliver liam", company: "viking burrito", email: "oliver@burrito.com", vatNumber: "FRB1235476" },
 ]
+
+const TransactionDetails: TransactionDetails[] = [
+  {
+    when: "Today",
+    details: [
+      { id: 1, type: "", name: "", date: "", time: "", money: "", success: "" }
+    ]
+  }
+]
+
 const BillingInformation = ({ BillingInformation }: { BillingInformation: BillingInformationDetails[] }) => (
   <>
     {BillingInformation.map((ele) => (
@@ -25,23 +35,36 @@ const BillingInformation = ({ BillingInformation }: { BillingInformation: Billin
   </>
 )
 
+// const Transaction = ({ Transaction }: { Transaction: TransactionDetails[] })=>(<></>)
+
 
 export default function BillingPage() {
   return (
     <div className="w-full flex flex-col justify-between items-center gap-y-5 py-2">
       <div className="w-full grid grid-rows-3 grid-flow-col gap-4"></div>
-      <div className="w-full flex justify-between items-center">
-        <div className="w-[60%]">
-          <div className="MainCards w-full min-h-[555px] h-max flex flex-wrap justify-between items-center py-6 px-5">
-            <div className=" h-[8%] w-full flex flex-col">
+      <div className="w-full flex flex-wrap justify-between items-center gap-y-2">
+        <div className="w-[61%] max-lg:w-[55%] max-md:w-full">
+          <div className="MainCards w-full h-[555px] flex flex-wrap justify-between items-center py-6 px-5">
+            <div className="h-[8%] w-full flex">
               <p className="headerTitle">Billing Information</p>
             </div>
-            <div className="h-[91%] w-full flex flex-col justify-between items-center gap-5 pl-1">
+            <div className="h-[91%] overflow-y-auto w-full flex flex-col justify-between items-center gap-5 pl-1">
               <BillingInformation BillingInformation={BillingInformationDetails} />
             </div>
           </div>
         </div>
-        <div className="w-[35%]"></div>
+        <div className="w-[38%] max-lg:w-[43%] max-md:w-full">
+          <div className="MainCards w-full h-[555px] flex flex-wrap justify-between items-center py-6 px-5">
+            <div className="h-[8%] w-full flex flex-wrap justify-between items-center gap-1">
+              <p className="headerTitle w-2/5 min-w-max">Your Transaction{`'`}s</p>
+              <p className="text-secondColor text-xs">23 - 30 March 2020</p>
+            </div>
+            <div className="h-[91%] overflow-y-auto w-full flex flex-col justify-between items-center">
+              <div className="h-[33%]">w</div>
+              <div className="h-[65%]">d</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )
