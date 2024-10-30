@@ -1,7 +1,7 @@
-import AnalyticsCards from "@/components/AnalyticsCards";
-import FrontCard from "@/components/frontCard";
-import ChartsCards from "@/components/ChartsCards";
-import LastCard from "@/components/LastCard";
+import AnalyticsCards from "@/components/DashboardPage/AnalyticsCards";
+import FrontCard from "@/components/DashboardPage/frontCard";
+import ChartsCards from "@/components/DashboardPage/ChartsCards";
+import LastCard from "@/components/DashboardPage/LastCard";
 
 export default function Home() {
   return (

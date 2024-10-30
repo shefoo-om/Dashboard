@@ -1,8 +1,8 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @next/next/no-img-element */
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Progress } from "@/components/ui/progress"
 import { EllipsisVertical } from "lucide-react"
+import { FirstCardDetails, SecondCardDetails } from "@/types/Tables"
 
 import icon1 from "@/assets/imgForTable/ch.png"
 import icon2 from "@/assets/imgForTable/ad1.png"
@@ -17,7 +17,7 @@ import mem4 from "@/assets/imgForTable/member/glen.png"
 import mem5 from "@/assets/imgForTable/member/funny.png"
 import mem6 from "@/assets/imgForTable/member/bos.png"
 
-const tableOneDetails = [
+const tableOneDetails : FirstCardDetails[] = [
   { id: 1, img: mem1, author: "Raymond Reddington", email: "Raymond@simmmple.com", function: "Manager", type: "Organization", status: "online", history: "23/04/18" },
   { id: 2, img: mem2, author: "Donald Ressler", email: "Donald@simmmple.com", function: "Programator", type: "Developer", status: "offline", history: "11/01/19" },
   { id: 3, img: mem3, author: "Tom Keen", email: "Tom@simmmple.com", function: "Programator", type: "Developer", status: "online", history: "19/09/17" },
@@ -26,7 +26,13 @@ const tableOneDetails = [
   { id: 6, img: mem6, author: "Harold Cooper", email: "Harlod@simmmple.com", function: "Manager", type: "Organization", status: "offline", history: "14/09/20" },
 ]
 
-const statusValue = "";
+const tableTwoDetails : SecondCardDetails[] = [
+  { id: 1, icon: icon1, project: "Chakra Vision UI Version", budget: "$14,555", percent: 60, status: "Working" },
+  { id: 1, icon: icon2, project: "Add Progress Track", budget: "$3,000", percent: 100, status: "Done" },
+  { id: 1, icon: icon3, project: "Fix Platform Errors", budget: "Not Set", percent: 30, status: "Canceled" },
+  { id: 1, icon: icon4, project: "Launch our Mobile App", budget: "$20,500", percent: 0, status: "Canceled" },
+  { id: 1, icon: icon5, project: "Add the New Pricing Page", budget: "$500", percent: 100, status: "Done" }
+]
 
 const TableOne = (
   <Table className="w-full min-w-[550px] h-full rounded-[4px] overflow-auto bg-transparent">
@@ -80,13 +86,6 @@ const TableOne = (
   </Table>
 )
 
-const tableTwoDetails = [
-  { id: 1, icon: icon1, project: "Chakra Vision UI Version", budget: "$14,555", percent: 60, status: "Working" },
-  { id: 1, icon: icon2, project: "Add Progress Track", budget: "$3,000", percent: 100, status: "Done" },
-  { id: 1, icon: icon3, project: "Fix Platform Errors", budget: "Not Set", percent: 30, status: "Canceled" },
-  { id: 1, icon: icon4, project: "Launch our Mobile App", budget: "$20,500", percent: 0, status: "Canceled" },
-  { id: 1, icon: icon5, project: "Add the New Pricing Page", budget: "$500", percent: 100, status: "Done" }]
-
 const TableTwo = (
   <Table className="w-full min-w-[550px] rounded-[4px] overflow-auto bg-transparent">
     <TableHeader>
@@ -127,7 +126,7 @@ const TableTwo = (
     </TableBody>
   </Table>
 )
-export default function page() {
+export default function TablesPage() {
   return (
     <div className="w-full flex flex-col justify-between items-center gap-y-5 py-2">
       <div className="MainCards w-full min-h-[523.5px] h-max flex flex-col justify-between items-center py-6 px-5">

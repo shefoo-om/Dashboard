@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 "use client";
+import { BarChartItem } from "@/types/Dashboard";
 import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 
-const data = [
+const data : BarChartItem[] = [
   { name: "Jan", Sales: 400 },
   { name: "Feb", Sales: 300 },
   { name: "Mar", Sales: 270 },

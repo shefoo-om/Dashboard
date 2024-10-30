@@ -1,20 +1,21 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 "use client";
+import { AreaChartItem } from "@/types/Dashboard";
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 
-const data = [
-    { name: "Jan", "Websites": 400, "Mopile Apps": 200, amt: 2400 },
-    { name: "Feb", "Websites": 300, "Mopile Apps": 600, amt: 2210 },
-    { name: "Mar", "Websites": 270, "Mopile Apps": 450, amt: 2290 },
-    { name: "Apr", "Websites": 450, "Mopile Apps": 150, amt: 2000 },
-    { name: "May", "Websites": 320, "Mopile Apps": 400, amt: 2181 },
-    { name: "Jun", "Websites": 400, "Mopile Apps": 500, amt: 2500 },
-    { name: "Jul", "Websites": 250, "Mopile Apps": 300, amt: 2100 },
-    { name: "Aug", "Websites": 180, "Mopile Apps": 260, amt: 2400 },
-    { name: "Sep", "Websites": 600, "Mopile Apps": 350, amt: 2210 },
-    { name: "Oct", "Websites": 280, "Mopile Apps": 480, amt: 2290 },
-    { name: "Nov", "Websites": 320, "Mopile Apps": 500, amt: 2000 },
-    { name: "Dec", "Websites": 500, "Mopile Apps": 600, amt: 2181 },
+const data: AreaChartItem[] = [
+    { name: "Jan", Websites: 400, "Mopile Apps": 200, amt: 2400 },
+    { name: "Feb", Websites: 300, "Mopile Apps": 600, amt: 2210 },
+    { name: "Mar", Websites: 270, "Mopile Apps": 450, amt: 2290 },
+    { name: "Apr", Websites: 450, "Mopile Apps": 150, amt: 2000 },
+    { name: "May", Websites: 320, "Mopile Apps": 400, amt: 2181 },
+    { name: "Jun", Websites: 400, "Mopile Apps": 500, amt: 2500 },
+    { name: "Jul", Websites: 250, "Mopile Apps": 300, amt: 2100 },
+    { name: "Aug", Websites: 180, "Mopile Apps": 260, amt: 2400 },
+    { name: "Sep", Websites: 600, "Mopile Apps": 350, amt: 2210 },
+    { name: "Oct", Websites: 280, "Mopile Apps": 480, amt: 2290 },
+    { name: "Nov", Websites: 320, "Mopile Apps": 500, amt: 2000 },
+    { name: "Dec", Websites: 500, "Mopile Apps": 600, amt: 2181 },
 ];
 
 // @ts-ignore
@@ -36,6 +37,7 @@ const CustomTooltip = ({ active, payload, label }) => {
     }
     return null;
 };
+
 export default function AreaChartComponent() {
     return (
         <ResponsiveContainer width="100%" minWidth={500} height="90%">
@@ -53,7 +55,7 @@ export default function AreaChartComponent() {
                 </defs>
                 <XAxis dataKey="name" tick={{ fill: "white" }} />
                 <YAxis axisLine={false} tick={{ fill: "white" }} />
-                <CartesianGrid strokeDasharray="3 3"  height={10}/>
+                <CartesianGrid strokeDasharray="3 3" height={10} />
                 <Tooltip content={<CustomTooltip active={undefined} payload={undefined} label={undefined} />} />
                 <Area type="monotone" dataKey="Websites" stroke="#0075FF" fillOpacity={1} fill="url(#colorUv)" />
                 <Area type="monotone" dataKey="Mopile Apps" stroke="#2CD9FF" fillOpacity={1} fill="url(#colorPv)" />

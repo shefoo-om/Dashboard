@@ -1,12 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
 import AreaChartComponent from "./Charts/AreaChart";
 import BarChartCom from "./Charts/BarChart";
-import { Progress } from "./ui/progress";
+import { Progress } from "../ui/progress";
 
-import icon1 from "../assets/icons/users.png";
-import icon2 from "../assets/icons/files.png";
-import icon3 from "../assets/icons/money.png";
-import icon4 from "../assets/icons/image.png";
+import icon1 from "@/assets/icons/users.png";
+import icon2 from "@/assets/icons/files.png";
+import icon3 from "@/assets/icons/money.png";
+import icon4 from "@/assets/icons/image.png";
 
 const CardsItems = [
     {

@@ -8,9 +8,9 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-import img1 from "../assets/raymond.png";
-import img2 from "../assets/www.jpg";
-import img3 from "../assets/payment.png";
+import img1 from "@/assets/raymond.png";
+import img2 from "@/assets/www.jpg";
+import img3 from "@/assets/payment.png";
 
 const listNotification = [
   {

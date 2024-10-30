@@ -7,30 +7,41 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table"
-import { Progress } from "./ui/progress"
+import { Progress } from "../ui/progress"
+import { LastCardOrdertDetails, LastCardProjectDetails } from "@/types/Dashboard"
+
 // icons
-import icon1 from "../assets/imgForTable/ch.png"
-import icon2 from "../assets/imgForTable/ad1.png"
-import icon3 from "../assets/imgForTable/fi.png"
-import icon4 from "../assets/imgForTable/spotify.png"
-import icon5 from "../assets/imgForTable/ad.png"
-import icon6 from "../assets/imgForTable/re.png"
+import icon1 from "@/assets/imgForTable/ch.png"
+import icon2 from "@/assets/imgForTable/ad1.png"
+import icon3 from "@/assets/imgForTable/fi.png"
+import icon4 from "@/assets/imgForTable/spotify.png"
+import icon5 from "@/assets/imgForTable/ad.png"
+import icon6 from "@/assets/imgForTable/re.png"
 
 // imgs of member
-import mem1 from "../assets/imgForTable/member/raymond.jpg"
-import mem2 from "../assets/imgForTable/member/ressler.png"
-import mem3 from "../assets/imgForTable/member/kem.png"
-import mem4 from "../assets/imgForTable/member/glen.png"
-import mem5 from "../assets/imgForTable/member/funny.png"
-import mem6 from "../assets/imgForTable/member/bos.png"
+import mem1 from "@/assets/imgForTable/member/raymond.jpg"
+import mem2 from "@/assets/imgForTable/member/ressler.png"
+import mem3 from "@/assets/imgForTable/member/kem.png"
+import mem4 from "@/assets/imgForTable/member/glen.png"
+import mem5 from "@/assets/imgForTable/member/funny.png"
+import mem6 from "@/assets/imgForTable/member/bos.png"
 
-const projectDetails = [
+const projectDetails : LastCardProjectDetails[] = [
     { id: 1, icon: icon1, company: "Chakra Vision UI Version", members: [mem1, mem2, mem3, mem4], budget: "$14,555", percent: 60 },
-    { id: 1, icon: icon2, company: "Add Progress Track", members: [mem1], budget: "$3,000", percent: 10 },
-    { id: 1, icon: icon3, company: "Fix Platform Errors", members: [mem5, mem6, mem5], budget: "Not Set", percent: 100 },
-    { id: 1, icon: icon4, company: "Launch our Mobile App", members: [mem3, mem2], budget: "$20,500", percent: 100 },
-    { id: 1, icon: icon5, company: "Add the New Pricing Page", members: [mem1, mem5, mem4, mem6], budget: "$500", percent: 25 },
-    { id: 1, icon: icon6, company: "Redesign New Online Shop", members: [mem5], budget: "$2000", percent: 40 }
+    { id: 2, icon: icon2, company: "Add Progress Track", members: [mem1], budget: "$3,000", percent: 10 },
+    { id: 3, icon: icon3, company: "Fix Platform Errors", members: [mem5, mem6, mem5], budget: "Not Set", percent: 100 },
+    { id: 4, icon: icon4, company: "Launch our Mobile App", members: [mem3, mem2], budget: "$20,500", percent: 100 },
+    { id: 5, icon: icon5, company: "Add the New Pricing Page", members: [mem1, mem5, mem4, mem6], budget: "$500", percent: 25 },
+    { id: 6, icon: icon6, company: "Redesign New Online Shop", members: [mem5], budget: "$2000", percent: 40 }
+]
+
+const ordersDetails : LastCardOrdertDetails[] = [
+    { id: 1, icon: icon1, title: "$2400, Design changes", history: "22 DEC 7:20 PM" },
+    { id: 2, icon: icon2, title: "New order #1832412", history: "21 DEC 11 PM" },
+    { id: 3, icon: icon3, title: "Server payments for April", history: "21 DEC 9:34 PM" },
+    { id: 4, icon: icon5, title: "New card added for order #4395133", history: "20 DEC 2:20 AM" },
+    { id: 5, icon: icon4, title: "New card added for order #4395133", history: "18 DEC 4:54 AM" },
+    { id: 6, icon: icon6, title: "New order #9583120", history: "17 DEC" },
 ]
 
 const FirstCard = (
@@ -104,14 +115,6 @@ const FirstCard = (
     </div>
 )
 
-const ordersDetails = [
-    { id: 1, icon: icon1, title: "$2400, Design changes", history: "22 DEC 7:20 PM" },
-    { id: 2, icon: icon2, title: "New order #1832412", history: "21 DEC 11 PM" },
-    { id: 3, icon: icon3, title: "Server payments for April", history: "21 DEC 9:34 PM" },
-    { id: 4, icon: icon5, title: "New card added for order #4395133", history: "20 DEC 2:20 AM" },
-    { id: 5, icon: icon4, title: "New card added for order #4395133", history: "18 DEC 4:54 AM" },
-    { id: 6, icon: icon6, title: "New order #9583120", history: "17 DEC" },
-]
 const SecondCard = (
     <div className="h-full flex flex-col items-center gap-5">
         <div className=" h-[10%] w-full flex flex-col">

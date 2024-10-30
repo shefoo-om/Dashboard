@@ -1,10 +1,12 @@
 import { Home, UserCog } from "lucide-react";
 import Link from "next/link";
 import NotificationBox from "./NotificationBox";
-import { SidebarTrigger } from "./ui/sidebar";
+import { SidebarTrigger } from "../ui/sidebar";
+
 type Location = {
   route: string;
 };
+
 export function Navbar({ route }: Location) {
   return (
     <nav className="text-xs sticky top-4 flex flex-nowrap w-full justify-between items-center font-semibold min-h-[4.6875rem] max-md:h-[118px] py-3 px-3 rounded-xl z-50">
