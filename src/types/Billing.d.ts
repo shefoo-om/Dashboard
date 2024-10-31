@@ -8,12 +8,12 @@ export interface BillingInformationDetails {
 
 export interface Transaction {
     id: number;
-    type: string;
     name: string;
     date: string;
     time: string;
+    meridiem : "AM" |"PM"; 
     money: string;
-    success: string;
+    success: "done" | "failed" | "pending";
 }
 export interface TransactionDetails {
     when: string;

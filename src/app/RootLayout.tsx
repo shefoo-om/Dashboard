@@ -20,7 +20,7 @@ export default function RootLayout({
                 {allowedPaths.includes(pathname) ? (
                     <SidebarProvider>
                         <AppSidebar />
-                        <main className="w-full mx-8 max-lg:px-5 max-sm:mx-0 py-6 relative">
+                        <main className="w-full mx-6 max-sm:mx-4 py-6 relative">
                             <Navbar route={route} />
                             {children}
                         </main>
