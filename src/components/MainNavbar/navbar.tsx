@@ -9,7 +9,7 @@ type Location = {
 
 export function Navbar({ route }: Location) {
   return (
-    <nav className="text-xs sticky top-4 flex flex-nowrap w-full justify-between items-center font-semibold min-h-[4.6875rem] max-md:h-[118px] py-3 px-3 rounded-xl z-50">
+    <nav className="text-xs sticky top-4 flex flex-nowrap w-full justify-between items-center font-semibold min-h-[75px] max-md:h-[118px] py-3 px-3 rounded-xl z-50">
       <div className="grid grid-rows-2 w-max">
         <div className="flex flex-nowrap items-center gap-2">
           <Link href={"/"}>
