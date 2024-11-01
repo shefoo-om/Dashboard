@@ -44,7 +44,6 @@ const BillingInformation = ({ BillingInformation }: { BillingInformation: Billin
   </>
 )
 
-
 const TransactionCards = ({ TransactionCards }: { TransactionCards: TransactionDetails[] }) => (
   <>
     {TransactionCards.map((ele) => (
@@ -81,11 +80,20 @@ const TransactionCards = ({ TransactionCards }: { TransactionCards: TransactionD
   </>
 )
 
-
 export default function BillingPage() {
   return (
-    <div className="w-full flex flex-col justify-between items-center gap-y-5 py-2">
-      <div className="w-full grid grid-rows-3 grid-flow-col gap-4"></div>
+    <div className="w-full h-max flex flex-col justify-between items-center gap-y-5 py-2">
+      <div className="w-full h-full flex justify-between items-center max-lg:flex-wrap gap-4">
+        <div className="w-2/3 h-max max-lg:w-full flex flex-wrap justify-between items-center gap-4">
+          <div className="MainCards h-[260px] w-[49%] max-[1440px]:w-full">1</div>
+          <div className="MainCards h-[260px] w-[49%] max-[1440px]:w-full">2</div>
+          <div className="MainCards h-[185px] w-full">3</div>
+        </div>
+        <div className="MainCards h-full w-1/3 max-[1440px]:w-[40%] max-lg:w-full flex flex-col">
+          <div className="h-full flex items-center justify-center">4</div>
+        </div>
+      </div>
+
       <div className="w-full flex flex-wrap justify-between items-center gap-y-2">
         <div className="w-[61%] max-lg:w-[54%] max-md:w-full">
           <div className="MainCards w-full h-[555px] flex flex-wrap justify-between items-center py-6 px-5">
