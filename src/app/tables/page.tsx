@@ -128,7 +128,7 @@ const TableTwo = (
 )
 export default function TablesPage() {
   return (
-    <div className="w-full flex flex-col justify-between items-center gap-y-5 py-2">
+    <div className="w-full flex flex-col justify-between items-center gap-y-5 pb-2 pt-6">
       <div className="MainCards w-full min-h-[523.5px] h-max flex flex-col justify-between items-center py-6 px-5">
         <div className=" h-[10%] w-full flex flex-col">
           <p className="headerTitle">Authors table</p>
