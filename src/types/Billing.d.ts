@@ -1,3 +1,9 @@
+export interface InvoicesInformationDetails {
+    id: number;
+    date: string;
+    invoice_number: string;
+    amount: number;
+}
 export interface BillingInformationDetails {
     id: number;
     name: string;
@@ -11,7 +17,7 @@ export interface Transaction {
     name: string;
     date: string;
     time: string;
-    meridiem : "AM" |"PM"; 
+    meridiem: "AM" | "PM";
     money: string;
     success: "done" | "failed" | "pending";
 }
