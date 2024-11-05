@@ -20,7 +20,7 @@ const FirstCard = (
   </div>
 );
 const SecondCard = (
-  <div className="h-cardHeight w-full flex flex-col justify-between py-6 pb-8">
+  <div className="h-cardHeight w-full flex flex-col justify-between pt-6 pb-8">
     <div className="px-4">
       <p className="headerTitle">Satisfaction Rate</p>
       <p className="text-secondColor text-sm">From all projects</p>
@@ -99,7 +99,7 @@ const SecondCard = (
   </div>
 );
 const ThirdCard = (
-  <div className="h-cardHeight w-full flex flex-col justify-between py-6 pb-8">
+  <div className="h-cardHeight w-full flex flex-col justify-between pt-6 pb-8">
     <div className="w-full flex flex-nowrap justify-between px-4 mb-10">
       <p className="headerTitle">Referral Tracking</p>
       <Link
@@ -152,10 +152,10 @@ const ThirdCard = (
 export default function FrontCard() {
   return (
     <div className="w-full flex flex-wrap justify-between items-center pt-[18px] gap-y-5">
-      <div className="firstCardFrontCards w-[41%] max-xl:w-full flex ">
+      <div className="firstCardFrontCards w-[41%] max-xl:w-full flex">
         {FirstCard}
       </div>
-      <div className="MainCards w-[26%] max-xl:w-[48%] max-lg:w-full ">
+      <div className="MainCards w-[26%] max-xl:w-[48%] max-lg:w-full">
         {SecondCard}
       </div>
       <div className="MainCards w-[30%] max-xl:w-[48%] max-lg:w-full">

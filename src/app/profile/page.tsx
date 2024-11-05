@@ -2,6 +2,8 @@
 "use client";
 
 import type { NavbarDetails } from "@/types/Profile"
+import { MoveRight } from "lucide-react";
+import Link from "next/link";
 import React, { useState } from "react"
 
 const NavbarDetails: NavbarDetails[] = [
@@ -18,7 +20,7 @@ export default function ProfilePage() {
 
 
   return (
-    <div className="w-full flex flex-col justify-between items-center gap-4 pb-2 pt-6">
+    <div className="w-full flex flex-col justify-between items-center gap-y-8 pb-2 pt-6">
       <div className="MainCards w-full flex justify-between items-center max-md:flex-col gap-2 p-5">
         <div className="w-1/2 max-md:w-full flex flex-col justify-between items-start max-md:items-center gap-2">
           {NavbarDetails.map((ele) => (
@@ -59,14 +61,43 @@ export default function ProfilePage() {
         </div>
       </div>
 
-
-
-
-      <div className="w-full flex flex-wrap justify-between items-center gap-2">
-        <div className="w-[29%] max-[1440px]:w-full rounded-[20px]"></div>
-        <div className="MainCards w-[40%] max-[1440px]:w-full"></div>
-        <div className="MainCards w-[29%] max-[1440px]:w-full"></div>
+      <div className="w-full h-max grid grid-cols-3 max-[1400px]:grid-cols-1 gap-3 max-[1300px]:gap-y-5">
+        <div className="billingSecondCardBg w-full h-full min-h-[350px] rounded-[20px] pt-6 pl-8">
+          <div className="h-[270px] flex flex-col flex-wrap justify-between font-medium">
+            <div>
+              <p className="font-bold text-2xl w-full py-3">Welcome back!</p>
+              <p className="text-secondColor">Nice to see you, Mark Johnson!</p>
+            </div>
+            <Link href={"/"} className="flex flex-nowrap w-max items-center">
+              Tap to record
+              <p className="hover:translate-x-2 duration-300 pl-2">
+                <MoveRight />
+              </p>
+            </Link>
+          </div>
+        </div>
+        <div className="MainCards w-full h-full min-h-[400px] flex flex-col justify-between items-center gap-3 pt-6 px-8">
+          <div className="w-full h-max">
+            <p className="headerTitle pb-2">Car Informations</p>
+            <p className="text-secondColor">Hello, Mark Johnson! Your Car is ready.</p>
+          </div>
+          <div className="w-full h-full">
+            <div></div>
+          </div>
+        </div>
+        <div className="MainCards w-full h-full min-h-[350px] flex flex-col justify-between items-center gap-3 pt-6 px-8">
+          <div className="w-full h-max">
+            <p className="headerTitle pb-2">profile information</p>
+            <p className="text-secondColor">Hi, I’m Mark Johnson, Decisions: If you can’t decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality).</p>
+          </div>
+          <div>
+            
+          </div>
+        </div>
       </div>
+
+
+
       <div className="w-full flex flex-wrap justify-between items-center gap-2">
         <div className="MainCards w-[29%] max-[1440px]:w-full"></div>
         <div className="MainCards w-[69%] max-[1440px]:w-full"></div>
