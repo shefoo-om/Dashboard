@@ -1,16 +1,22 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import type { NavbarDetails, profileInformation } from "@/types/Profile"
+import CircularProgress from "@/components/Profile/PercentSVG";
+import type { NavbarDetails, PercentProgress, profileInformation } from "@/types/Profile"
 import { MoveRight } from "lucide-react";
 import Link from "next/link";
 import React, { useState } from "react"
 
 const NavbarDetails: NavbarDetails[] = [
-  { name: "Khalid", email: "Khalid@simmmple.com" }
+  { id: 1, name: "Khalid", email: "Khalid@simmmple.com" }
 ]
+const PercentProgress: PercentProgress[] = [
+  { id: 1, percent: 85, time: "1h 25 min" }
+]
+
 const ProfileInformation: profileInformation[] = [
   {
+    id: 1,
     name: " Mark Johnson", mobile: " (44) 123 1234 123", email: "mark@simmmple.com", location: " United States",
     socail: [{ Facebook: "https://www.facebook.com", X: "https://www.twitter.com", Insta: "https://www.instagram.com" }]
   }
@@ -30,7 +36,7 @@ export default function ProfilePage() {
       <div className="MainCards w-full flex justify-between items-center max-md:flex-col gap-2 p-5">
         <div className="w-1/2 max-md:w-full flex flex-col justify-between items-start max-md:items-center gap-2">
           {NavbarDetails.map((ele) => (
-            <React.Fragment key={ele.name}>
+            <React.Fragment key={ele.id}>
               <p className="text-xl font-bold">{ele.name}</p>
               <p className="text-sm font-semibold text-secondColor">{ele.email}</p>
             </React.Fragment>
@@ -86,11 +92,30 @@ export default function ProfilePage() {
             <p className="headerTitle pb-2">Car Informations</p>
             <p className="text-secondColor">Hello, Mark Johnson! Your Car is ready.</p>
           </div>
-          <div className="w-full h-full">
-            <div></div>
+          <div className="w-full h-full flex flex-wrap justify-between items-center gap-2 py-2">
+            {PercentProgress.map((ele) => (
+              <div key={ele.id} className="w-max flex flex-col justify-between items-center gap-y-3">
+                <div className="w-[150px] h-[150px] flex justify-between items-center relative">
+                  <CircularProgress percentage={ele.percent} />
+                  <div className="w-full flex flex-col justify-between items-center absolute">
+                    <p className="text-3xl font-bold">{ele.percent}%</p>
+                    <p className="text-secondColor text-xs">Current Load</p>
+                  </div>
+                </div>
+                <div className="flex flex-col">
+                  <p className="font-bold text-center">{ele.time}</p>
+                  <p className="text-secondColor text-sm">Time to full charge</p>
+                </div>
+              </div>))}
+            {/* <div className="flex max-md:flex-wrap justify-between items-center gap-3">
+              <div className="billingInfoBox w-[48%] max-md:w-full flex justify-between items-center">
+                <p>hi</p>
+                <p>hi</p>
+              </div>
+            </div> */}
           </div>
         </div>
-        
+
         <div className="MainCards w-full h-full min-h-[340px] h-full flex flex-col justify-between items-center gap-y-5 pt-6 px-8">
           <div className="w-full h-max ">
             <p className="headerTitle pb-2">profile information</p>
