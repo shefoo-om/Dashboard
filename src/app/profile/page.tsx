@@ -160,6 +160,7 @@ export default function ProfilePage() {
 
 
 
+
       <div className="w-full flex flex-wrap justify-between items-center gap-2">
         <div className="MainCards w-[29%] max-[1440px]:w-full"></div>
         <div className="MainCards w-[69%] max-[1440px]:w-full"></div>
