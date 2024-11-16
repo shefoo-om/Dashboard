@@ -11,7 +11,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     const pathname = usePathname();
-    const allowedPaths = ["", "profile", "tables", "billing"].map(path => `/${path}`);
+    const allowedPaths = ["", "tables", "billing"].map(path => `/${path}`);
     const route = pathname === "/" || pathname === "" ? "Dashboard" : pathname.replace("/", "");
 
     return (
