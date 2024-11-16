@@ -6,7 +6,7 @@ import {
   CreditCard,
   Home,
   ChartNoAxesColumnIncreasing,
-  UserCog,
+  // UserCog,
   Rocket,
   LogIn,
 } from "lucide-react";
@@ -28,7 +28,7 @@ const items1 = [
   { title: "Billing", url: "/billing", icon: CreditCard },
 ];
 const items2 = [
-  { title: "Profile", url: "/profile", icon: UserCog },
+  // { title: "Profile", url: "/profile", icon: UserCog },
   { title: "Sign In", url: "/sign-in", icon: LogIn },
   { title: "Sign Up", url: "/sign-up", icon: Rocket },
 ];
