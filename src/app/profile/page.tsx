@@ -1,11 +1,16 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import CircularProgress from "@/components/Profile/PercentSVG";
-import type { NavbarDetails, PercentProgress, profileInformation } from "@/types/Profile"
+import type { CarInformation, NavbarDetails, PercentProgress, profileInformation } from "@/types/Profile"
 import { MoveRight } from "lucide-react";
 import Link from "next/link";
 import React, { useState } from "react"
+
+import img1 from "../../assets/profile/caricon.png"
+import img2 from "../../assets/profile/power.png"
+import LineChartForProfile from "@/components/Profile/LineChart";
 
 const NavbarDetails: NavbarDetails[] = [
   { id: 1, name: "Khalid", email: "Khalid@simmmple.com" }
@@ -14,11 +19,20 @@ const PercentProgress: PercentProgress[] = [
   { id: 1, percent: 85, time: "1h 25 min" }
 ]
 
+const CarInformation1: CarInformation[] = [
+  { id: 1, title: "Battery Health", value: "76%", icon: img1 },
+  { id: 2, title: "Consumption", value: "163W/km", icon: img2 }
+]
+const CarInformation2: CarInformation[] = [
+  { id: 1, title: "Efficiency", value: "+20%" },
+  { id: 2, title: "This Week", value: "1.342km" }
+]
+
 const ProfileInformation: profileInformation[] = [
   {
     id: 1,
     name: " Mark Johnson", mobile: " (44) 123 1234 123", email: "mark@simmmple.com", location: " United States",
-    socail: [{ Facebook: "https://www.facebook.com", X: "https://www.twitter.com", Insta: "https://www.instagram.com" }]
+    social: [{ facebook: "https://www.facebook.com", x: "https://www.twitter.com", insta: "https://www.instagram.com" }]
   }
 ]
 
@@ -73,8 +87,8 @@ export default function ProfilePage() {
         </div>
       </div>
 
-      <div className="w-full h-max grid grid-cols-3 max-[1400px]:grid-cols-1 gap-3 max-[1300px]:gap-y-5">
-        <div className="billingSecondCardBg w-full h-full min-h-[350px] flex flex-col flex-wrap justify-between font-medium rounded-[20px] py-6 pl-8">
+      <div className="w-full h-max grid grid-cols-4 max-[1400px]:grid-cols-1 gap-3 max-[1300px]:gap-y-5">
+        <div className="billingSecondCardBg w-full h-full col-span-1 min-h-[350px] flex flex-col flex-wrap justify-between font-medium rounded-[20px] py-6 pl-8">
           <div>
             <p className="font-bold text-3xl w-full pb-1">Welcome back!</p>
             <p>Nice to see you, Mark Johnson!</p>
@@ -87,14 +101,14 @@ export default function ProfilePage() {
           </Link>
         </div>
 
-        <div className="MainCards w-full h-full min-h-[400px] flex flex-col justify-between items-center gap-3 pt-6 px-8">
+        <div className="MainCards w-full h-full col-span-2 min-h-[400px] flex flex-col justify-between items-center gap-3 pt-6 px-8">
           <div className="w-full h-max">
             <p className="headerTitle pb-2">Car Informations</p>
             <p className="text-secondColor">Hello, Mark Johnson! Your Car is ready.</p>
           </div>
-          <div className="w-full h-full flex flex-wrap justify-between items-center gap-2 py-2">
-            {PercentProgress.map((ele) => (
-              <div key={ele.id} className="w-max flex flex-col justify-between items-center gap-y-3">
+          <div className="w-full h-full flex flex-nowrap max-md:flex-wrap justify-between items-center gap-5 py-2">
+            {PercentProgress?.map((ele) => (
+              <div key={ele.id} className="w-max max-md:w-full flex flex-col justify-between items-center gap-y-3">
                 <div className="w-[150px] h-[150px] flex justify-between items-center relative">
                   <CircularProgress percentage={ele.percent} />
                   <div className="w-full flex flex-col justify-between items-center absolute">
@@ -107,16 +121,39 @@ export default function ProfilePage() {
                   <p className="text-secondColor text-sm">Time to full charge</p>
                 </div>
               </div>))}
-            {/* <div className="flex max-md:flex-wrap justify-between items-center gap-3">
-              <div className="billingInfoBox w-[48%] max-md:w-full flex justify-between items-center">
-                <p>hi</p>
-                <p>hi</p>
+            <div className="w-full max-md:w-full grid grid-cols-2 max-md:grid-cols-1 items-center gap-8">
+              <div className="grid grid-rows-2 gap-8">
+                {CarInformation1.map((car) => (
+                  <div key={car.id} className="MainCards w-full overflow-hidden h-28 flex justify-between items-center px-5 gap-4">
+                    <div className="w-max h-full flex flex-col justify-center items-start gap-3 my-3">
+                      <p className="text-secondColor text-xs font-semibold">{car.title}</p>
+                      <p className="text-2xl font-bold">{car.value}</p>
+                    </div>
+                    <div className="w-14 h-14 flex justify-between items-center rounded-lg bg-bgBlue">
+                      <img src={car.icon?.src} alt="" className="size-6 mx-auto" />
+                    </div>
+                  </div>
+                ))}
               </div>
-            </div> */}
+              <div className="grid grid-rows-2 gap-8">
+                {CarInformation2.map((car) => (
+                  <div key={car.id} className="MainCards w-full max-md:w-full h-28 flex justify-between items-center gap-4">
+                    <div className="max-w-max w-2/5 h-full flex flex-col justify-center items-start gap-3 ml-5 my-3">
+                      <p className="text-secondColor text-xs font-semibold">{car.title}</p>
+                      <p className="text-2xl font-bold">{car.value}</p>
+                    </div>
+                    <div className="w-full h-full overflow-hidden flex justify-between items-center mr-5 my-3">
+                      <LineChartForProfile />
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+            </div>
           </div>
         </div>
 
-        <div className="MainCards w-full h-full min-h-[340px] h-full flex flex-col justify-between items-center gap-y-5 pt-6 px-8">
+        <div className="MainCards w-full h-full min-h-[340px] h-full col-span-1 flex flex-col justify-between items-center gap-y-5 pt-6 px-8">
           <div className="w-full h-max ">
             <p className="headerTitle pb-2">profile information</p>
             <p className="text-secondColor">Hi, I’m Mark Johnson, Decisions: If you can’t decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality).</p>
@@ -129,19 +166,19 @@ export default function ProfilePage() {
                 <li>Email: <span className="text-white ">{info.email}</span></li>
                 <li>Location: <span className="text-white ">{info.location}</span></li>
                 <li className="flex justify-between items-center gap-2 w-max">Social:
-                  {info.socail.map((ele) => (
+                  {info.social.map((ele) => (
                     <>
-                      <a href={ele.Facebook} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:scale-105 duration-200">
+                      <a href={ele.facebook} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:scale-105 duration-200">
                         <svg className="w-[18px] h-[18px]" color="white" focusable="false" viewBox="0 0 24 24" aria-hidden="true" data-testid="FacebookIcon">
                           <path fill="white" d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m13 2h-2.5A3.5 3.5 0 0 0 12 8.5V11h-2v3h2v7h3v-7h3v-3h-3V9a1 1 0 0 1 1-1h2V5z"></path>
                         </svg>
                       </a>
-                      <a href={ele.X} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:scale-105 duration-200">
+                      <a href={ele.x} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:scale-105 duration-200">
                         <svg className="w-[18px] h-[18px]" focusable="false" viewBox="0 0 24 24" aria-hidden="true" data-testid="TwitterIcon">
                           <path fill="white" d="M21 3L3 21M3 3l18 18" stroke="white" strokeWidth="2"></path>
                         </svg>
                       </a>
-                      <a href={ele.Insta} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:scale-105 duration-200">
+                      <a href={ele.insta} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:scale-105 duration-200">
                         <svg className="w-[18px] h-[18px]" focusable="false" viewBox="0 0 24 24" aria-hidden="true" data-testid="InstagramIcon">
                           <path fill="white" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"></path>
                         </svg>

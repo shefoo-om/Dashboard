@@ -1,3 +1,5 @@
+import { StaticImageData } from "next/image";
+
 export interface NavbarDetails {
     id: number;
     name: string;
@@ -9,17 +11,25 @@ export interface PercentProgress {
     time: string;
 }
 
+export interface CarInformation {
+    id: number;
+    title: string;
+    value: string;
+    icon?: StaticImageData;
+    chart?: string;
+}
+
 export interface profileInformation {
     id: number;
     name: string;
     mobile: string;
     email: string;
     location: string;
-    socail: SocailUrl[];
+    social: SocailUrl[];
 }
 
 interface SocailUrl {
-    Facebook: string;
-    X: string;
-    Insta: string;
+    facebook: string;
+    x: string;
+    insta: string;
 }
