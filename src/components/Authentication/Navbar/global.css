@@ -45,3 +45,8 @@
     line-height: 1.3;
     font-weight: 600;
 }
+.linkHover:hover{
+  scale:calc(1.05);
+  transition-duration: 300ms;
+  animation-duration: 300ms;
+}
