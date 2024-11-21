@@ -1,3 +1,13 @@
+.bgMain {
+  background: transparent
+    linear-gradient(
+      159.02deg,
+      rgb(15, 18, 59) 14.25%,
+      rgb(9, 13, 46) 56.45%,
+      rgb(2, 5, 21) 86.14%
+    );
+}
+
 .AuthBg {
   background-image: url("../../assets/signUpImage.jpg");
   background-size: cover;
@@ -35,4 +45,16 @@
   position: relative;
   letter-spacing: 8px;
   text-transform: uppercase;
+}
+
+.bgFormBox {
+  background: rgb(19, 21, 56);
+}
+.bgFormBoxmain {
+  background: transparent
+    radial-gradient(
+      94.43% 69.43%,
+      rgb(255, 255, 255) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
 }

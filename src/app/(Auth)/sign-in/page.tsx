@@ -3,7 +3,7 @@ import "../global.css"
 
 export default function SignInPage() {
   return (
-    <div className="h-screen w-full flex flex-wrap justify-center items-center relative">
+    <div className="bgMain h-screen w-full flex flex-wrap justify-center items-center relative">
       <div className="w-full">
       <NavbarAuth />
       </div>
@@ -13,7 +13,7 @@ export default function SignInPage() {
           <p>Shefo will comming</p>
         </div>
       </div>
-      <div className="max-lg:w-full w-[49%] h-full flex justify-center items-center">SignIn Form</div>
+      <div className="max-lg:w-full w-[49%] h-full flex justify-center items-center bgFormBox">SignIn Form</div>
 
     </div>
   )
