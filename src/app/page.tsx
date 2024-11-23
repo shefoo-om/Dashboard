@@ -6,9 +6,12 @@ import { useEffect } from "react";
 export default function Home() {
     const router = useRouter();
     useEffect(() => {
-        router.push("/sign-up");
-    }, []);
-    return (
+        const timer = setTimeout(() => {
+            router.push("/sign-up");
+        }, 5000 + Math.random() * 2000);
+
+        return () => clearTimeout(timer);
+    }, [router]); return (
         <Loader />
     );
 }

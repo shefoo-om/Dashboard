@@ -6,7 +6,7 @@ import {
   CreditCard,
   Home,
   ChartNoAxesColumnIncreasing,
-  // UserCog,
+  UserCog,
   Rocket,
   LogIn,
 } from "lucide-react";
@@ -23,12 +23,12 @@ import {
 } from "@/components/ui/sidebar";
 
 const items1 = [
-  { title: "Dashboard", url: "/", icon: Home },
+  { title: "Dashboard", url: "/dashboard", icon: Home },
   { title: "Tables", url: "/tables", icon: ChartNoAxesColumnIncreasing },
   { title: "Billing", url: "/billing", icon: CreditCard },
 ];
 const items2 = [
-  // { title: "Profile", url: "/profile", icon: UserCog },
+  { title: "Profile", url: "/profile", icon: UserCog },
   { title: "Sign In", url: "/sign-in", icon: LogIn },
   { title: "Sign Up", url: "/sign-up", icon: Rocket },
 ];
