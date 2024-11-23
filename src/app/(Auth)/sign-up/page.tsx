@@ -23,7 +23,7 @@ export default function SignUpPage() {
           <p>Shefo will comming</p>
         </div>
       </div>
-      <div className="max-lg:w-full w-[49%] h-max overflow-auto flex flex-col justify-center items-center py-20">
+      <div className="max-lg:w-full w-[49%] h-max min-h-[1250px] overflow-auto flex flex-col justify-center items-center py-20">
         <div className="pt-6 px-6 mx-auto max-w-96">
           <div className="mb-6 text-center">
             <h3 className="mb-2 text-3xl font-bold text-white mx-auto">Welcome!</h3>
@@ -31,19 +31,25 @@ export default function SignUpPage() {
           </div>
         </div>
         <div className=" bgFormBoxmain h-[750px] w-[380px] max-sm:w-3/4 flex justify-center items-center rounded-xl p-[2px]">
-          <div className="bgFormBox h-full w-full border-2 border-transparent rounded-xl flex flex-col justify-between items-center gap-2 px-9 py-5">
+          <div className="bgFormBox h-full w-full border-2 border-transparent rounded-xl flex flex-col justify-around items-center px-9 py-5">
             <p className="text-lg font-semibold">Register with</p>
             <div className="w-full h-20 flex justify-center gap-5">
               {LinksSocail.map((ele) => (
                 <div key={ele.id} className="rounded-xl w-16 h-16 bgFormBoxmain p-[2px]">
-                  <Link href={ele.links} target="_blank" className="bgFormBox w-full h-full rounded-xl hover:opacity-90 flex justify-center items-center">
+                  <Link href={ele.links} target="_blank" className="bgFormBox w-full h-full rounded-xl hover:opacity-90 flex justify-center items-center duration-200">
                     <ele.icon className="size-5" />
                   </Link>
                 </div>
               ))}
             </div>
-            <p className="text-base text-[#a0aec0] mb-3">or</p>
+            <p className="text-base text-secondColor">or</p>
             <FormSignIn />
+            <p className="text-center text-sm text-secondColor">
+              Already have an account ?{"  "}
+              <Link href={'/sign-in'} className="text-white font-semibold duration-200">
+                Sign in
+              </Link>
+            </p>
           </div>
         </div>
       </div>

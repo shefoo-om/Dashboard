@@ -34,44 +34,44 @@ export const FormSignIn = () => {
     return (
         <Form {...methods}>
             <form className="w-full " onSubmit={handleSubmit(onSubmit)}>
-                <FormItem className="flex flex-col pb-3">
+                <FormItem className="flex flex-col pb-5">
                     <FormLabel htmlFor="firstName" className="font-semibold">First Name</FormLabel>
                     <div className="bgFormBoxmain p-[2px] rounded-xl">
                         <FormControl className="bgFormBox rounded-xl p-2 w-full h-full">
                             <input id="firstName"  {...register("firstName")} placeholder="ex: Shefo" className="focus-visible:outline-none text-sm" />
                         </FormControl>
-                        {errors.firstName && <div>{errors.firstName.message}</div>}
+                        {errors.firstName && <div className="text-sm text-red-500">{errors.firstName.message}</div>}
                     </div>
                 </FormItem>
-                <FormItem className="flex flex-col pb-3">
+                <FormItem className="flex flex-col pb-5">
                     <FormLabel htmlFor="lastName" className="font-semibold">Last Name</FormLabel>
                     <div className="bgFormBoxmain p-[2px] rounded-xl">
                         <FormControl className="bgFormBox rounded-xl p-2 w-full h-full">
                             <input id="lastName"  {...register("lastName")} placeholder="ex: Ronaldo" className="focus-visible:outline-none text-sm" />
                         </FormControl>
-                        {errors.lastName && <div>{errors.lastName.message}</div>}
+                        {errors.lastName && <div className="text-sm text-red-500">{errors.lastName.message}</div>}
                     </div>
                 </FormItem>
-                <FormItem className="flex flex-col pb-3">
+                <FormItem className="flex flex-col pb-5">
                     <FormLabel htmlFor="email" className="font-semibold">Email</FormLabel>
                     <div className="bgFormBoxmain p-[2px] rounded-xl">
                         <FormControl className="bgFormBox rounded-xl p-2 w-full h-full">
                             <input id="email"  {...register("email")} placeholder="ex: aaa@dd.com" className="focus-visible:outline-none text-sm" />
                         </FormControl>
-                        {errors.email && <div>{errors.email.message}</div>}
+                        {errors.email && <div className="text-sm text-red-500">{errors.email.message}</div>}
                     </div>
                 </FormItem>
-                <FormItem className="flex flex-col pb-3">
+                <FormItem className="flex flex-col pb-5">
                     <FormLabel htmlFor="password" className="font-semibold">Password</FormLabel>
                     <div className="bgFormBoxmain p-[2px] rounded-xl">
                         <FormControl className="bgFormBox rounded-xl p-2 w-full h-full">
                             <input id="password"  {...register("password")} placeholder="ex: Password123" className="focus-visible:outline-none text-sm" type="password" />
                         </FormControl>
-                        {errors.password && <div>{errors.password.message}</div>}
+                        {errors.password && <div className="text-sm text-red-500">{errors.password.message}</div>}
                     </div>
                 </FormItem>
-                <div className="w-full p-2 flex justify-center items-center">
-                    <button className="bg-bgBlue rounded-xl px-3 py-1 font-semibold hover:scale-105 duration-200" >
+                <div className="bgFormBoxmain w-[150px] p-[2px] mx-auto flex justify-center items-center rounded-xl">
+                    <button className="w-full bgFormBox hover:opacity-90 rounded-xl py-2 font-semibold duration-200" >
                         Submit
                     </button>
                 </div>

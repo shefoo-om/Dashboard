@@ -26,8 +26,13 @@ export function NavbarAuth() {
                     <p className="AuthBgLink">Sign In</p>
                 </Link>
             </div>
-            <div className="pl-2">
+            {/* <div className="pl-2">
                 <Link className="text-white capitalize font-semibold text-base px-3 py-2 bg-bgBlue hover:brightness-105 duration-300 rounded-lg" href={"/"}>discover</Link>
+            </div> */}
+            <div className="bgFormBoxmain w-[100px] p-[2px] flex justify-center items-center rounded-xl" >
+                <Link className="w-full bgFormBox hover:opacity-90 rounded-xl py-[6px] font-semibold duration-200 text-white text-center" href={"/"} >
+                    Discover
+                </Link>
             </div>
         </nav>
     );
