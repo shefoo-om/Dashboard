@@ -9,7 +9,7 @@ export function NavbarAuth() {
                 Shefo
             </div>
             <div className="flex justify-between items-center gap-4">
-                <Link href={"/"} className="text-white flex flex-nowrap gap-1 items-center linkHover">
+                <Link href={"/dashboard"} className="text-white flex flex-nowrap gap-1 items-center linkHover">
                     <LayoutDashboard className="size-5" />
                     <p className="AuthBgLink">Dashboard</p>
                 </Link>

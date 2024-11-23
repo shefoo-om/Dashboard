@@ -1,15 +1,14 @@
-import AnalyticsCards from "@/components/DashboardPage/AnalyticsCards";
-import FrontCard from "@/components/DashboardPage/frontCard";
-import ChartsCards from "@/components/DashboardPage/ChartsCards";
-import LastCard from "@/components/DashboardPage/LastCard";
+"use client";
+import Loader from "@/components/Loader/Loader";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function Home() {
-  return (
-    <div className="pt-2">
-      <AnalyticsCards />
-      <FrontCard />
-      <ChartsCards />
-      <LastCard />
-    </div>
-  );
+    const router = useRouter();
+    useEffect(() => {
+        router.push("/sign-up");
+    }, []);
+    return (
+        <Loader />
+    );
 }
