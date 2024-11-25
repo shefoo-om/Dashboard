@@ -1,8 +1,8 @@
-import { NavbarAuth } from "@/components/Authentication/Navbar/NavbarAuth"
 import "../global.css"
 import Link from "next/link"
 import { Facebook, Linkedin, Mails } from "lucide-react"
-import { FormSignIn } from "@/components/Authentication/formSignUp/page"
+import { NavbarAuth } from "@/components/Authentication/Navbar/NavbarAuth"
+import { FormSignup } from "@/components/Authentication/formSignUp/page"
 
 const LinksSocail = [
   { id: 1, icon: Facebook, links: "https://www.facebook.com" },
@@ -43,7 +43,11 @@ export default function SignUpPage() {
               ))}
             </div>
             <p className="text-base text-secondColor">or</p>
-            <FormSignIn />
+
+
+            <FormSignup />                      
+            
+            
             <p className="text-center text-sm text-secondColor">
               Already have an account ?{"  "}
               <Link href={'/sign-in'} className="text-white font-semibold duration-200">

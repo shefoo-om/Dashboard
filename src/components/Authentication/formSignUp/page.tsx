@@ -19,7 +19,8 @@ const schema = z.object({
 
 type FormFields = z.infer<typeof schema>
 
-export const FormSignIn = () => {
+export const FormSignup = () => {
+        
     const methods = useForm<FormFields>({
         resolver: zodResolver(schema),
     });

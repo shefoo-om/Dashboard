@@ -6,10 +6,10 @@ const secretKey = process.env.SESSION_SECRET;
 const encodedKey = new TextEncoder().encode(secretKey);
 
 export async function createSession(userId: string) {
-    const expiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
+    const expiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000); // the time for expire the cookies
     const session = await encrypt({ userId, expiresAt });
 
-    cookies().set("session", session, {
+    (await cookies()).set("session", session, {
         httpOnly: true,
         secure: true,
         expires: expiresAt,
@@ -17,7 +17,7 @@ export async function createSession(userId: string) {
 }
 
 export async function deleteSession() {
-    cookies().delete("session");
+    (await cookies()).delete("session");
 }
 
 type SessionPayload = {
