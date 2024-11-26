@@ -12,7 +12,7 @@ export default function Layout({
 }>) {
   const pathname = usePathname();
   const allowedPaths = ["dashboard", "profile", "tables", "billing"].map(path => `/${path}`);
-  const route = pathname === "/" || pathname === "" ? "Dashboard" : pathname.replace("/", "");
+  const route = pathname.replace("/", "");
 
   return (
     <html lang="en">

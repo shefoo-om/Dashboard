@@ -81,11 +81,3 @@ export const FormSignup = () => {
 
     )
 }
-
-// const SubmitButton = () => {
-//     return (
-//     <button>
-
-//     </button>
-// )
-// }

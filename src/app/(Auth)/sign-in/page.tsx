@@ -1,56 +1,36 @@
-
-import { Facebook, Linkedin, Mails } from "lucide-react"
-
 import "../global.css"
 import Link from "next/link";
 import { NavbarAuth } from "@/components/Authentication/Navbar/NavbarAuth";
 import { LoginForm } from "./SignInFormPage";
 
-const LinksSocail = [
-  { id: 1, icon: Facebook, links: "https://www.facebook.com" },
-  { id: 2, icon: Linkedin, links: "https://www.linkedin.com" },
-  { id: 3, icon: Mails, links: "https://www.gmail.com" }
-]
+
 export default function SignInPage() {
   return (
-    <main className="bgMain h-max w-full flex flex-wrap justify-between relative">
+    <main className="bgMain h-screen min-h-max w-full flex flex-wrap justify-between relative">
       <div className="w-full">
         <NavbarAuth />
       </div>
-      <div className="AuthBg w-[49%] max-lg:hidden flex justify-center items-center capitalize">
+      <div className="AuthBg h-screen w-[49%] max-lg:hidden flex justify-center items-center capitalize">
         <div className="">
           <h6>INSPIRED BY THE FUTURE:</h6>
           <p>Shefo will comming</p>
         </div>
       </div>
-      <div className="max-lg:w-full w-[49%] h-max overflow-auto flex flex-col justify-center items-center py-20">
+      <div className="h-screen max-lg:w-full w-[49%] h-max overflow-auto flex flex-col justify-center items-center py-20">
         <div className="pt-6 px-6 mx-auto max-w-96">
           <div className="mb-6 text-center">
-            <h3 className="mb-2 text-3xl font-bold text-white mx-auto">Welcome!</h3>
-            <p className="text-sm text-white font-normal">Use these awesome forms to login or create new account in your project for free.</p>
+            <h3 className="mb-2 text-3xl font-bold text-white mx-auto">Nice to see you!</h3>
+            <p className="text-sm text-white font-normal">Enter your email and password to sign in</p>
           </div>
         </div>
-        <div className=" bgFormBoxmain h-[650px] w-[380px] max-sm:w-3/4 flex justify-center items-center rounded-xl p-[2px]">
-          <div className="bgFormBox h-full w-full border-2 border-transparent rounded-xl flex flex-col justify-between items-center gap-2 px-9 py-5">
-            <p className="text-lg font-semibold">Register with</p>
-            <div className="w-full h-20 flex justify-center gap-5">
-              {LinksSocail.map((ele) => (
-                <div key={ele.id} className="rounded-xl w-16 h-16 bgFormBoxmain p-[2px]">
-                  <Link href={ele.links} target="_blank" className="bgFormBox w-full h-full rounded-xl hover:opacity-90 flex justify-center items-center">
-                    <ele.icon className="size-5" />
-                  </Link>
-                </div>
-              ))}
-            </div>
-            <p className="text-base text-[#a0aec0] mb-3">or</p>
-            {/* <SignInForm /> */}
-            {/* <LoginForm /> */}
+        <div className="w-[380px] max-sm:w-3/4 flex justify-center items-center rounded-xl p-[2px]">
+          <div className="h-full w-full border-2 border-transparent rounded-xl flex flex-col justify-between items-center gap-2 px-9 py-5">
             <LoginForm />
-            <p className="text-center text-sm text-gray-400">
+            <p className="text-center text-sm text-gray-400 pt-3">
               Dont have an account?{" "}
-              <a href="#" className="text-blue-500 hover:underline">
+              <Link href={'/sign-up'} className="text-white hover:underline">
                 Sign up
-              </a>
+              </Link>
             </p>
           </div>
         </div>
