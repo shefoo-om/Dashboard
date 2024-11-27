@@ -6,13 +6,13 @@ const secretKey = process.env.SESSION_SECRET;
 const encodedKey = new TextEncoder().encode(secretKey);
 
 export async function createSession(userId: string) {
-    const expiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000); // the time for expire the cookies
+    const expiresAt = new Date(Date.now() + 30 * 60 * 1000).toISOString(); // the time for expire the cookies
     const session = await encrypt({ userId, expiresAt });
 
     (await cookies()).set("session", session, {
         httpOnly: true,
         secure: true,
-        expires: expiresAt,
+        expires: new Date(expiresAt),
     });
 }
 
@@ -22,24 +22,28 @@ export async function deleteSession() {
 
 type SessionPayload = {
     userId: string;
-    expiresAt: Date;
+    expiresAt: string;
 };
 
 export async function encrypt(payload: SessionPayload) {
-    return new SignJWT(payload)
+    const expiresAt = Math.floor(new Date(payload.expiresAt).getTime() / 1000); // Convert to seconds
+
+    return new SignJWT({ userId: payload.userId }) // Include only necessary payload data
         .setProtectedHeader({ alg: "HS256" })
         .setIssuedAt()
-        .setExpirationTime("7d")
+        .setExpirationTime(expiresAt) // Use Unix timestamp in seconds
         .sign(encodedKey);
 }
 
-export async function decrypt(session: string | undefined = "") {
+
+export async function decrypt(session: string | undefined = ""): Promise<SessionPayload | null> {
     try {
         const { payload } = await jwtVerify(session, encodedKey, {
             algorithms: ["HS256"],
         });
-        return payload;
+        return payload as SessionPayload;
     } catch (error) {
         console.log("Failed to verify session: ", error);
+        return null; // Return null for invalid sessions
     }
 }

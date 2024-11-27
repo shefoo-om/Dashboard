@@ -1,4 +1,5 @@
 "use client";
+
 import Loader from "@/components/Loader/Loader";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
