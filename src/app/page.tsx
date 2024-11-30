@@ -9,7 +9,7 @@ export default function Home() {
     useEffect(() => {
         const timer = setTimeout(() => {
             router.push("/sign-in");
-        }, 5000 + Math.random() * 2000);
+        }, 5000);
 
         return () => clearTimeout(timer);
     }, [router]); return (
