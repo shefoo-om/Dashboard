@@ -26,9 +26,9 @@
 
 import { cookies } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
-import { decrypt } from "./app/(Auth)/_Authentication/formLogIn/lib/sesions";
+import { decrypt, deleteSession } from "./app/(Auth)/_Authentication/formLogIn/lib/sesions";
 
-const protectedRoutes = ["/dashboard","/profile","/tables","/billing"];
+const protectedRoutes = ["/dashboard", "/profile", "/tables", "/billing"];
 const publicRoutes = ["/sign-in"];
 
 export default async function middleware(req: NextRequest) {
@@ -61,7 +61,7 @@ export default async function middleware(req: NextRequest) {
     const sessionExpired = new Date(session.expiresAt) < new Date();
     if (sessionExpired) {
         // Delete the session and redirect to the login page
-        (await cookies()).delete("session");
+        await deleteSession();
         return NextResponse.redirect(new URL("/sign-in", req.nextUrl));
     }
 

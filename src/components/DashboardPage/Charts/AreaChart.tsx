@@ -60,7 +60,6 @@ export default function AreaChartComponent() {
                 <Area type="monotone" dataKey="Websites" stroke="#0075FF" fillOpacity={1} fill="url(#colorUv)" />
                 <Area type="monotone" dataKey="Mopile Apps" stroke="#2CD9FF" fillOpacity={1} fill="url(#colorPv)" />
             </AreaChart>
-            
         </ResponsiveContainer>
     )
 }
