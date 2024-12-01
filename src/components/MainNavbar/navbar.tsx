@@ -1,6 +1,5 @@
-import { Home, UserCog } from "lucide-react";
+import { Home } from "lucide-react";
 import Link from "next/link";
-import NotificationBox from "./NotificationBox";
 import { SidebarTrigger } from "../ui/sidebar";
 
 type Location = {
@@ -21,15 +20,8 @@ export function Navbar({ route }: Location) {
         <div className="text-base capitalize">{route}</div>
       </div>
       <div className="flex flex-nowrap items-center gap-2">
-        <Link href={"/sign-in"} className="flex flex-nowrap gap-1 items-center">
-          <UserCog className="size-5" />
-          <p className="text-sm">Sign in</p>
-        </Link>
         <div>
           <SidebarTrigger className="size-7 hover:bg-transparent hover:text-white" />
-        </div>
-        <div className="flex items-center pt-1">
-          <NotificationBox />
         </div>
       </div>
     </nav>

@@ -6,7 +6,7 @@ import { LoginForm } from "./SignInFormPage";
 
 export default function SignInPage() {
   return (
-    <main className="bgMain h-screen min-h-max w-full flex flex-wrap justify-between relative">
+    <main className="bgMain h-screen w-full flex flex-wrap justify-between relative">
       <div className="w-full">
         <NavbarAuth />
       </div>
@@ -26,9 +26,9 @@ export default function SignInPage() {
         <div className="w-[380px] max-sm:w-3/4 flex justify-center items-center rounded-xl p-[2px]">
           <div className="h-full w-full border-2 border-transparent rounded-xl flex flex-col justify-between items-center gap-2 px-9 py-5">
             <LoginForm />
-            <p className="text-center text-sm text-gray-400 pt-3">
+            <p className="w-max text-center text-sm text-gray-400 pt-3">
               Dont have an account?{" "}
-              <Link href={'/sign-up'} className="text-white hover:underline">
+              <Link href={'/sign-up'} className="text-white hover:scale-105">
                 Sign up
               </Link>
             </p>
