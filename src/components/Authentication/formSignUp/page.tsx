@@ -4,6 +4,8 @@ import { Form, FormControl, FormItem, FormLabel } from "@/components/ui/form";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
+import { useRouter } from "next/navigation";
+import { addUser } from "@/app/(Auth)/sign-in/User";
 
 
 const schema = z.object({
@@ -16,22 +18,51 @@ const schema = z.object({
     ,
     email: z.string().email()
 })
-
 type FormFields = z.infer<typeof schema>
 
 export const FormSignup = () => {
-        
+
     const methods = useForm<FormFields>({
         resolver: zodResolver(schema),
     });
 
     const { register, handleSubmit, formState: { errors } } = methods;
+    const router = useRouter(); // Next.js hook for navigation
 
-
-    const onSubmit: SubmitHandler<FormFields> = (data) => {
-        console.log(data)
-    }
-
+    const generateRandomId = () => {
+        return Math.random().toString(36).substring(2, 34);
+    };
+    const onSubmit: SubmitHandler<FormFields> = async (data) => {
+        const dataWithId = { ...data, id: generateRandomId() };
+        try {
+            // Add user to the users array
+            addUser(dataWithId.id, dataWithId.email, dataWithId.firstName, dataWithId.lastName, dataWithId.password);
+    
+            // Create a session for the newly added user
+            const response = await fetch("/src/app/api/sesions.ts", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ userId: dataWithId.id }),
+            });
+    
+            if (response.ok) {
+                // Try to parse JSON if the response is ok
+                const responseData = await response.json();
+                console.log('Session created successfully:', responseData);
+                // Redirect to the dashboard page
+                router.push("/dashboard");
+            } else {
+                // Handle non-OK response
+                console.error("Error creating session:", await response.text());
+            }
+        } catch (error) {
+            console.error("Error adding user:", error);
+        }
+    };
+    
+    
     return (
         <Form {...methods}>
             <form className="w-full " onSubmit={handleSubmit(onSubmit)}>

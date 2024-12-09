@@ -54,7 +54,7 @@
 
 import { cookies } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
-import { decrypt } from "./app/(Auth)/_Authentication/formLogIn/lib/sesions";
+import { decrypt } from "./app/api/sesions";
 
 const protectedRoutes = ["/dashboard", "/profile", "/tables", "/billing"];
 const publicRoutes = ["/sign-in"];
