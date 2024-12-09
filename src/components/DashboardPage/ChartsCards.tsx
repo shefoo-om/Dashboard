@@ -14,7 +14,7 @@ const CardsItems = [
         title: "users",
         number: "32,099",
         icon: icon3,
-        percent: 35
+        percent: 33
 
     },
     {

@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 "use client";
 import { AreaChartItem } from "@/types/Dashboard";
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
+import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+// import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 
 const data: AreaChartItem[] = [
     { name: "Jan", Websites: 400, "Mopile Apps": 200, amt: 2400 },

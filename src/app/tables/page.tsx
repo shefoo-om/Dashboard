@@ -28,10 +28,10 @@ const tableOneDetails : FirstCardDetails[] = [
 
 const tableTwoDetails : SecondCardDetails[] = [
   { id: 1, icon: icon1, project: "Chakra Vision UI Version", budget: "$14,555", percent: 60, status: "Working" },
-  { id: 1, icon: icon2, project: "Add Progress Track", budget: "$3,000", percent: 100, status: "Done" },
-  { id: 1, icon: icon3, project: "Fix Platform Errors", budget: "Not Set", percent: 30, status: "Canceled" },
-  { id: 1, icon: icon4, project: "Launch our Mobile App", budget: "$20,500", percent: 0, status: "Canceled" },
-  { id: 1, icon: icon5, project: "Add the New Pricing Page", budget: "$500", percent: 100, status: "Done" }
+  { id: 2, icon: icon2, project: "Add Progress Track", budget: "$3,000", percent: 100, status: "Done" },
+  { id: 3, icon: icon3, project: "Fix Platform Errors", budget: "Not Set", percent: 30, status: "Canceled" },
+  { id: 4, icon: icon4, project: "Launch our Mobile App", budget: "$20,500", percent: 0, status: "Canceled" },
+  { id: 5, icon: icon5, project: "Add the New Pricing Page", budget: "$500", percent: 100, status: "Done" }
 ]
 
 const TableOne = (

@@ -6,10 +6,10 @@ import lineImg from "@/assets/billing/lineImg.png"
 const InvoicesInformationDetails: InvoicesInformationDetails[] = [
   { "id": 1, "date": "March 01, 2020", "invoice_number": "#MS-415646", "amount": 180 },
   { "id": 2, "date": "February 10, 2021", "invoice_number": "#RV-126749", "amount": 250 },
-  { "id": 2, "date": "February 10, 2021", "invoice_number": "#RV-126749", "amount": 250 },
-  { "id": 3, "date": "April 05, 2020", "invoice_number": "#QW-103578", "amount": 120 },
-  { "id": 4, "date": "June 25, 2019", "invoice_number": "#MS-415646", "amount": 180 },
-  { "id": 5, "date": "March 01, 2019", "invoice_number": "#AR-803481", "amount": 300 }
+  { "id": 3, "date": "February 10, 2021", "invoice_number": "#RV-126749", "amount": 250 },
+  { "id": 4, "date": "April 05, 2020", "invoice_number": "#QW-103578", "amount": 120 },
+  { "id": 5, "date": "June 25, 2019", "invoice_number": "#MS-415646", "amount": 180 },
+  { "id": 6, "date": "March 01, 2019", "invoice_number": "#AR-803481", "amount": 300 }
 ]
 
 
