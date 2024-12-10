@@ -1,11 +1,25 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useState } from "react";
 import { LoginYarab } from "./actions";
 import { useFormStatus } from "react-dom";
+import Loader from "@/app/loading";
 
 export function LoginForm() {
     const [state, formAction] = useActionState(LoginYarab, undefined);
+
+    const { pending } = useFormStatus();
+    const [isLoading, setIsLoading] = useState(false);
+
+    // Show loading page when the form is pending
+    if (pending && !isLoading) {
+        setIsLoading(true);
+    }
+
+    if (isLoading) {
+        return <Loader />;
+    }
+
 
     return (
         <form action={formAction} className="w-full">

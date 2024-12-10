@@ -27,7 +27,7 @@ export const FormSignup = () => {
     });
 
     const { register, handleSubmit, formState: { errors } } = methods;
-    const router = useRouter(); // Next.js hook for navigation
+    const router = useRouter(); 
 
     const generateRandomId = () => {
         return Math.random().toString(36).substring(2, 34);

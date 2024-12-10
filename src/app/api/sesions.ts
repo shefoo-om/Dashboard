@@ -7,7 +7,7 @@ const secretKey = process.env.SESSION_SECRET;
 const encodedKey = new TextEncoder().encode(secretKey);
 
 export async function createSession(userId: string) {
-    const expiresAt = new Date(Date.now() + 30 * 60 * 1000).toISOString(); // 5 minutes
+    const expiresAt = new Date(Date.now() + 30 * 60 * 1000).toISOString(); // 30 minutes
     const session = await encrypt({ userId, expiresAt });
 
     (await cookies()).set("session", session, {
