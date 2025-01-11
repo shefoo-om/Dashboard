@@ -1,6 +1,6 @@
 import "../global.css"
-import dynamic from 'next/dynamic'; 
-import { Suspense } from 'react'; 
+import dynamic from 'next/dynamic';
+import { Suspense } from 'react';
 import type { Metadata } from 'next'
 import Image from "next/image";
 import bggg from "../../../assets/signUpImage.webp"
@@ -29,16 +29,16 @@ export default function SignInPage() {
         </Suspense>
       </div>
       <div className="AuthBg h-screen w-[49%] max-lg:hidden flex justify-center relative items-center capitalize">
-      <Image
-        src={bggg}
-        alt="Picture of the Sign In"
-        fill
-        style={{
-          objectFit: 'cover',
-        }}
-        sizes="50vw" 
-        priority
-      />
+        <Image
+          src={bggg}
+          alt="Picture of the Sign In"
+          fill
+          style={{
+            objectFit: 'cover',
+          }}
+          sizes="50vw"
+          priority
+        />
         <div className="relative z-10 text-center">
           <h6>INSPIRED BY THE FUTURE:</h6>
           <p>Shefo will comming</p>
@@ -55,6 +55,10 @@ export default function SignInPage() {
           <div className="h-full w-full border-2 border-transparent rounded-xl flex flex-col justify-between items-center gap-2 px-9 py-5">
             <Suspense fallback={<div>Loading Login Form...</div>}>
               <LoginForm />
+              <div className="pt-2 text-secondColor">
+                <h6>email:aa@aa.io</h6>
+                <h6>pass:11221122</h6>
+              </div>
             </Suspense>
           </div>
         </div>
