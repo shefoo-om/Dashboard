@@ -3,7 +3,7 @@
 import { BarChartItem } from "@/types/Dashboard";
 import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 
-const data : BarChartItem[] = [
+const data: BarChartItem[] = [
   { name: "Jan", Sales: 400 },
   { name: "Feb", Sales: 300 },
   { name: "Mar", Sales: 270 },
@@ -40,7 +40,7 @@ export default function BarChartCom() {
         <XAxis hide dataKey="name" />
         <YAxis tick={{ fill: "white" }} />
         <Tooltip content={<CustomTooltip active={undefined} payload={undefined} label={undefined} />} />
-        <Bar dataKey="Sales" fill="white" barSize={10} radius={[10, 10, 0, 0]} spacing={10}/>
+        <Bar dataKey="Sales" fill="white" barSize={10} radius={[10, 10, 0, 0]} spacing={10} />
       </BarChart>
     </ResponsiveContainer>
   );

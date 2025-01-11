@@ -45,12 +45,13 @@ const ChartCard = (<>
         <p className="headerTitle"> Sales Overview </p>
         <p className="text-sm font-semibold text-secondColor"> <span className="text-green-500">+5% more</span> in 2021 </p>
     </div>
-    <div className="h-[80%] w-full overflow-auto">
+    <div className="h-[80%] w-full overflow-auto" rel="preload">
         <AreaChartComponent />
     </div>
 </>);
+
 const LineChart = (<>
-    <div className="w-full h-[60%]">
+    <div className="w-full h-[60%]" >
         <BarChartCom />
     </div>
     <div className="w-full h-[10%]">

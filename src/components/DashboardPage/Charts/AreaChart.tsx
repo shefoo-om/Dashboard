@@ -1,8 +1,6 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 "use client";
 import { AreaChartItem } from "@/types/Dashboard";
-import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
-// import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
+import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, TooltipProps, XAxis, YAxis } from "recharts";
 
 const data: AreaChartItem[] = [
     { name: "Jan", Websites: 400, "Mopile Apps": 200, amt: 2400 },
@@ -19,19 +17,16 @@ const data: AreaChartItem[] = [
     { name: "Dec", Websites: 500, "Mopile Apps": 600, amt: 2181 },
 ];
 
-// @ts-ignore
-const CustomTooltip = ({ active, payload, label }) => {
+const CustomTooltip: React.FC<TooltipProps<number, string>> = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
         return (
             <div className="bg-[#1e1e1eb2] text-[#fff] rounded-lg text-sm z-30 h-24 w-36 m-5 felx flex-col gap-3">
                 <div className="bg-[#000000ca] rounded-t-lg font-bold w-full py-2">
-                    <p className="ml-2">
-                        {label}
-                    </p>
+                    <p className="ml-2">{label}</p>
                 </div>
                 <div className="w-full h-4/6 items-center ml-2 mt-2 font-semibold">
-                    <p className="">Websites: {payload[0].value}</p>
-                    <p className="">Mobile Apps: {payload[1].value}</p>
+                    <p>Websites: {payload[0].value}</p>
+                    <p>Mobile Apps: {payload[1].value}</p>
                 </div>
             </div>
         );
@@ -41,9 +36,8 @@ const CustomTooltip = ({ active, payload, label }) => {
 
 export default function AreaChartComponent() {
     return (
-        <ResponsiveContainer width="100%" minWidth={500} height="90%">
-            <AreaChart data={data}
-                margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
+        <ResponsiveContainer width="100%" height="90%">
+            <AreaChart data={data} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
                 <defs>
                     <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
                         <stop offset="5%" stopColor="#0075FF" stopOpacity={0.8} />
@@ -57,10 +51,10 @@ export default function AreaChartComponent() {
                 <XAxis dataKey="name" tick={{ fill: "white" }} />
                 <YAxis axisLine={false} tick={{ fill: "white" }} />
                 <CartesianGrid strokeDasharray="3 3" height={10} />
-                <Tooltip content={<CustomTooltip active={undefined} payload={undefined} label={undefined} />} />
+                <Tooltip content={<CustomTooltip />} />
                 <Area type="monotone" dataKey="Websites" stroke="#0075FF" fillOpacity={1} fill="url(#colorUv)" />
                 <Area type="monotone" dataKey="Mopile Apps" stroke="#2CD9FF" fillOpacity={1} fill="url(#colorPv)" />
             </AreaChart>
         </ResponsiveContainer>
-    )
+    );
 }

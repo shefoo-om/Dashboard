@@ -42,6 +42,7 @@ export default function AnalyticsCards() {
               width={22}
               height={22}
               className="text-white"
+              priority
             />
           </div>
         </div>

@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import {
     Table,
     TableBody,
@@ -11,22 +10,23 @@ import { Progress } from "../ui/progress"
 import { LastCardOrdertDetails, LastCardProjectDetails } from "@/types/Dashboard"
 
 // icons
-import icon1 from "@/assets/imgForTable/ch.png"
-import icon2 from "@/assets/imgForTable/ad1.png"
-import icon3 from "@/assets/imgForTable/fi.png"
-import icon4 from "@/assets/imgForTable/spotify.png"
-import icon5 from "@/assets/imgForTable/ad.png"
-import icon6 from "@/assets/imgForTable/re.png"
+import icon1 from "@/assets/imgForTable/ch.webp"
+import icon2 from "@/assets/imgForTable/ad1.webp"
+import icon3 from "@/assets/imgForTable/fi.webp"
+import icon4 from "@/assets/imgForTable/spotify.webp"
+import icon5 from "@/assets/imgForTable/ad.webp"
+import icon6 from "@/assets/imgForTable/re.webp"
 
-// imgs of member
-import mem1 from "@/assets/imgForTable/member/raymond.jpg"
-import mem2 from "@/assets/imgForTable/member/ressler.png"
-import mem3 from "@/assets/imgForTable/member/kem.png"
-import mem4 from "@/assets/imgForTable/member/glen.png"
-import mem5 from "@/assets/imgForTable/member/funny.png"
-import mem6 from "@/assets/imgForTable/member/bos.png"
+// imgs of membera
+import mem1 from "@/assets/imgForTable/member/raymond.webp"
+import mem2 from "@/assets/imgForTable/member/ressler.webp"
+import mem3 from "@/assets/imgForTable/member/kem.webp"
+import mem4 from "@/assets/imgForTable/member/glen.webp"
+import mem5 from "@/assets/imgForTable/member/funny.webp"
+import mem6 from "@/assets/imgForTable/member/bos.webp"
+import Image from "next/image"
 
-const projectDetails : LastCardProjectDetails[] = [
+const projectDetails: LastCardProjectDetails[] = [
     { id: 1, icon: icon1, company: "Chakra Vision UI Version", members: [mem1, mem2, mem3, mem4], budget: "$14,555", percent: 60 },
     { id: 2, icon: icon2, company: "Add Progress Track", members: [mem1], budget: "$3,000", percent: 10 },
     { id: 3, icon: icon3, company: "Fix Platform Errors", members: [mem5, mem6, mem5], budget: "Not Set", percent: 100 },
@@ -35,7 +35,7 @@ const projectDetails : LastCardProjectDetails[] = [
     { id: 6, icon: icon6, company: "Redesign New Online Shop", members: [mem5], budget: "$2000", percent: 40 }
 ]
 
-const ordersDetails : LastCardOrdertDetails[] = [
+const ordersDetails: LastCardOrdertDetails[] = [
     { id: 1, icon: icon1, title: "$2400, Design changes", history: "22 DEC 7:20 PM" },
     { id: 2, icon: icon2, title: "New order #1832412", history: "21 DEC 11 PM" },
     { id: 3, icon: icon3, title: "Server payments for April", history: "21 DEC 9:34 PM" },
@@ -82,7 +82,14 @@ const FirstCard = (
                         <TableRow key={ele.id} className="border-t-[1px] border-[#222a48]">
                             <TableCell>
                                 <div className="w-full flex items-center">
-                                    <img src={ele.icon.src} alt="" className="size-5 rounded-md bg-transparent mr-3" />
+                                    <Image
+                                        src={ele.icon}
+                                        alt={`Member ${ele.members}`}
+                                        priority
+                                        width={20}
+                                        height={20}
+                                        className="rounded-md bg-transparent mr-3"
+                                    />
                                     {ele.company}
                                 </div>
                             </TableCell>
@@ -90,10 +97,12 @@ const FirstCard = (
                                 <div className="flex items-center justify-center w-max text-center py-2 opacity-100">
                                     {ele.members.map((member, index) => (
                                         <div key={index} className="size-6 rounded-full border-2 border-[#121241] overflow-hidden ml-[-10px] hover:z-20 duration-500 ">
-                                            <img
-                                                src={member.src}
+                                            <Image
+                                                src={member}
                                                 alt={`Member ${index + 1}`}
+                                                priority
                                                 className="w-full h-full"
+                                                sizes="(max-width: 768px) 100vw, 50vw"
                                             />
                                         </div>
 
@@ -142,7 +151,14 @@ const SecondCard = (
             {ordersDetails.map((ele) => (
                 <div key={ele.id} className="flex w-full justify-between items-center">
                     <div className="size-7 bg-transparent">
-                        <img src={ele.icon.src} alt="" className="size-4 bg-transparent rounded-md" />
+                        <Image
+                            src={ele.icon}
+                            alt={`${ele.id}`}
+                            width={16}
+                            height={16}
+                            className="bg-transparent rounded-md"
+                            priority
+                        />
                     </div>
                     <div className="flex flex-col gap-1 w-[90%]">
                         <p className="text-[15px] font-bold">{ele.title}</p>
