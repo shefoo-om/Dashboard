@@ -8,10 +8,6 @@
     );
 }
 
-.AuthBg {
-  background-image: url("../../assets/signUpImage.jpg");
-  background-size: cover;
-}
 
 .AuthBg h6 {
   text-align: start;

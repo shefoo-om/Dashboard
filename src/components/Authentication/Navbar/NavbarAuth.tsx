@@ -10,27 +10,8 @@ export function NavbarAuth() {
                     Shefo
                 </Link>
             </div>
-            {/* <div className="flex justify-between items-center gap-4">
-                <Link href={"/dashboard"} className="text-white flex flex-nowrap gap-1 items-center linkHover">
-                    <LayoutDashboard className="size-5" />
-                    <p className="AuthBgLink">Dashboard</p>
-                </Link>
-                <Link href={"/profile"} className="text-white flex flex-nowrap gap-1 items-center linkHover">
-                    <UserRoundPen className="size-5" />
-                    <p className="AuthBgLink">Profile</p>
-                </Link>
-                <Link href={"/sign-up"} className="text-white flex flex-nowrap gap-1 items-center linkHover">
-                    <UserCog className="size-5" />
-                    <p className="AuthBgLink">Sign Up</p>
-                </Link>
-                <Link href={"/sign-in"} className="text-white flex flex-nowrap gap-1 items-center linkHover dura">
-                    <LogIn className="size-5" />
-                    <p className="AuthBgLink">Sign In</p>
-                </Link>
-            </div> */}
-
             <div className="bgFormBoxmain w-[100px] p-[2px] flex justify-center items-center rounded-xl" >
-                <Link className="w-full bgFormBox hover:opacity-90 rounded-xl py-[6px] font-semibold duration-200 text-white text-center" href={"/"} >
+                <Link  className="w-full bgFormBox hover:opacity-90 rounded-xl py-[6px] font-semibold duration-200 text-white text-center" href={"/"} >
                     Discover
                 </Link>
             </div>

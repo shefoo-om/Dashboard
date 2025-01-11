@@ -1,17 +1,45 @@
 import "../global.css"
-// import Link from "next/link";
-import { NavbarAuth } from "@/components/Authentication/Navbar/NavbarAuth";
-import { LoginForm } from "./SignInFormPage";
+import dynamic from 'next/dynamic'; 
+import { Suspense } from 'react'; 
+import type { Metadata } from 'next'
+import Image from "next/image";
+import bggg from "../../../assets/signUpImage.webp"
+
+const NavbarAuth = dynamic(() =>
+  import("@/components/Authentication/Navbar/NavbarAuth").then((mod) => mod.NavbarAuth)
+);
+
+const LoginForm = dynamic(() =>
+  import("./SignInFormPage").then((mod) => mod.LoginForm)
+);
+
+
+export const metadata: Metadata = {
+  title: 'Sign-In',
+  description: "the sign in page"
+}
 
 
 export default function SignInPage() {
   return (
     <main className="bgMain h-screen w-full flex flex-wrap justify-between relative">
       <div className="w-full">
-        <NavbarAuth />
+        <Suspense fallback={<div>Loading Navbar...</div>}>
+          <NavbarAuth />
+        </Suspense>
       </div>
-      <div className="AuthBg h-screen w-[49%] max-lg:hidden flex justify-center items-center capitalize">
-        <div className="">
+      <div className="AuthBg h-screen w-[49%] max-lg:hidden flex justify-center relative items-center capitalize">
+      <Image
+        src={bggg}
+        alt="Picture of the Sign In"
+        fill
+        style={{
+          objectFit: 'cover',
+        }}
+        sizes="50vw" 
+        priority
+      />
+        <div className="relative z-10 text-center">
           <h6>INSPIRED BY THE FUTURE:</h6>
           <p>Shefo will comming</p>
         </div>
@@ -25,13 +53,9 @@ export default function SignInPage() {
         </div>
         <div className="w-[380px] max-sm:w-3/4 flex justify-center items-center rounded-xl p-[2px]">
           <div className="h-full w-full border-2 border-transparent rounded-xl flex flex-col justify-between items-center gap-2 px-9 py-5">
-            <LoginForm />
-            {/* <p className="w-max text-center text-sm text-gray-400 pt-3">
-              Dont have an account?{" "}
-              <Link href={'/sign-up'} className="text-white hover:scale-105">
-                Sign up
-              </Link>
-            </p> */}
+            <Suspense fallback={<div>Loading Login Form...</div>}>
+              <LoginForm />
+            </Suspense>
           </div>
         </div>
       </div>
