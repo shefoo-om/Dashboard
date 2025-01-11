@@ -2,12 +2,13 @@
 import React from "react";
 import { AnalyticsCardsItem } from "@/types/Dashboard";
 
-import icon1 from "@/assets/icons/users.png";
-import icon2 from "@/assets/icons/files.png";
-import icon3 from "@/assets/icons/money.png";
-import icon4 from "@/assets/icons/image.png";
+import icon1 from "@/assets/icons/users.webp";
+import icon2 from "@/assets/icons/files.webp";
+import icon3 from "@/assets/icons/money.webp";
+import icon4 from "@/assets/icons/image.webp";
+import Image from "next/image";
 
-const CardsItems : AnalyticsCardsItem[]= [
+const CardsItems: AnalyticsCardsItem[] = [
   { id: 1, typeData: "today's Money", number: "$55,000", persent: "+55", color: "text-green-500", icon: icon3, },
   { id: 2, typeData: "today's users", number: "2300", persent: "+3", color: "text-green-500", icon: icon1, },
   { id: 3, typeData: "new clients", number: "+3,462", persent: "-2", color: "text-red-600", icon: icon2, },
@@ -35,7 +36,13 @@ export default function AnalyticsCards() {
             </div>
           </div>
           <div className="size-[48px] bg-bgBlue rounded-xl flex justify-center items-center">
-          <img src={card.icon.src} alt="" className="text-white size-[22px]" />
+            <Image
+              src={card.icon}
+              alt={`icons${card.id}`}
+              width={22}
+              height={22}
+              className="text-white"
+            />
           </div>
         </div>
       ))}
