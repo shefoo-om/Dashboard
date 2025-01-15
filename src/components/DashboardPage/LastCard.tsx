@@ -84,7 +84,7 @@ const FirstCard = (
                                 <div className="w-full flex items-center">
                                     <Image
                                         src={ele.icon}
-                                        alt={`Member ${ele.members}`}
+                                        alt={`Icon for ${ele.company}`}
                                         priority
                                         width={20}
                                         height={20}
@@ -101,7 +101,8 @@ const FirstCard = (
                                                 src={member}
                                                 alt={`Member ${index + 1}`}
                                                 priority
-                                                className="w-full h-full"
+                                                width={24} 
+                                                height={24}
                                                 sizes="(max-width: 768px) 100vw, 50vw"
                                             />
                                         </div>
@@ -113,7 +114,11 @@ const FirstCard = (
                             <TableCell>
                                 <div className="w-full flex flex-wrap">
                                     <p className="w-3/4 mx-auto">{ele.percent}%</p>
-                                    <Progress value={ele.percent} className="w-3/4 mx-auto" />
+                                    <Progress
+                                        value={ele.percent}
+                                        className="w-3/4 mx-auto"
+                                        aria-label={`Progress for ${ele.company}: ${ele.percent}%`}
+                                    />
                                 </div>
                             </TableCell>
                         </TableRow>

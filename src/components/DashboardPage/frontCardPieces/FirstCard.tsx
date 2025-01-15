@@ -16,7 +16,7 @@ const FirstCard = () => (
                 aria-label="Tap to record"
             >
                 Tap to record
-                <MoveRight className="hover:translate-x-2 duration-300 pl-2" />
+                <MoveRight className="transition-transform duration-300 hover:translate-x-2 pl-2" />
             </Link>
         </div>
     </div>
