@@ -91,7 +91,7 @@ const LineChart = (
                                 height={15}
                                 width={15}
                                 className="text-white"
-                                priority // Preload above-the-fold images
+                                priority 
                             />
                         </div>
                         <p className="text-secondColor text-sm ml-2 font-medium">{item.title}</p>

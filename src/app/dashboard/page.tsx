@@ -7,7 +7,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Home',
-  description: "the home in page"
+  description: "the home page"
 }
 export default function Dashboard() {
   return (
