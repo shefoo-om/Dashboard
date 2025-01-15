@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import AreaChartComponent from "./Charts/AreaChart";
 import BarChartCom from "./Charts/BarChart";
 import { Progress } from "../ui/progress";
@@ -7,6 +6,7 @@ import icon1 from "@/assets/icons/users.webp";
 import icon2 from "@/assets/icons/files.webp";
 import icon3 from "@/assets/icons/money.webp";
 import icon4 from "@/assets/icons/image.webp";
+import Image from "next/image";
 
 const CardsItems = [
     {
@@ -65,7 +65,14 @@ const LineChart = (<>
             <div key={item.id} className="w-[24%] min-w-[85px] flex flex-wrap gap-y-2">
                 <div className="flex w-5/6 items-center">
                     <div className="size-6 bg-bgBlue rounded-[6px] flex justify-center items-center">
-                        <img src={item.icon.src} alt="" className="text-white size-[15px]" />
+                        <Image
+                            src={item.icon.src}
+                            alt="image of icons"
+                            height={15}
+                            width={15}
+                            className="text-white"
+                            priority
+                        />
                     </div>
                     <p className="text-secondColor text-sm ml-2 font-medium">{item.title}</p>
                 </div>

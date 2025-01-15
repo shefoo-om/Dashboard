@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { AnalyticsCardsItem } from "@/types/Dashboard";
 
