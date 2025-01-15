@@ -127,6 +127,10 @@ nav {
   backdrop-filter: blur(120px);
   border-color: rgba(226, 232, 240, 0.3) !important;
 }
+.navLink {
+  backdrop-filter: blur(120px);
+  border-color: rgba(226, 232, 240, 0.3) !important;
+}
 
 .analyticsCards {
   background: linear-gradient(

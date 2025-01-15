@@ -2,8 +2,6 @@
 import "./globals.css";
 import { usePathname } from "next/navigation";
 import { Navbar } from "@/components/MainNavbar/navbar";
-import { SidebarProvider } from "@/components/ui/sidebar";
-import { AppSidebar } from "@/components/Sidebar/sidebar";
 
 export default function Layout({
   children,
@@ -18,13 +16,10 @@ export default function Layout({
     <html lang="en">
       <body>
         {allowedPaths.includes(pathname) ? (
-          <SidebarProvider>
-            <AppSidebar />
             <main className="w-full px-6 max-sm:mx-0 max-sm:px-4 py-6 relative">
               <Navbar route={route} />
               {children}
             </main>
-          </SidebarProvider>
         ) : (
           children
         )}
