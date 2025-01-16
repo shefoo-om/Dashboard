@@ -3,9 +3,10 @@ import CircularProgress from "@/components/Profile/PercentSVG";
 import type { CarInformation, NavbarDetails, PercentProgress, profileInformation } from "@/types/Profile"
 import { MoveRight } from "lucide-react";
 import Link from "next/link";
-import React from "react"
+import React, { Suspense } from "react"
 
 import img1 from "../../assets/profile/caricon.webp"
+import bg from "../../assets/profile/bg3.webp"
 import img2 from "../../assets/profile/power.webp"
 import LineChartForProfile from "@/components/Profile/LineChart";
 import Image, { StaticImageData } from "next/image";
@@ -95,12 +96,22 @@ export default function ProfilePage() {
       </div>
 
       <div className="w-full h-max grid grid-cols-4 max-[1400px]:grid-cols-1 gap-3 max-[1300px]:gap-y-5">
-        <div className="billingSecondCardBg w-full h-full col-span-1 min-h-[350px] flex flex-col flex-wrap justify-between font-medium rounded-[20px] py-6 pl-8">
+        <div className="w-full h-full col-span-1 min-h-[350px] flex flex-col flex-wrap justify-between font-medium rounded-[20px] py-6 pl-8 relative bg-cover">
           <div>
-            <p className="font-bold text-3xl w-full pb-1">Welcome back!</p>
-            <p>Nice to see you, Mark Johnson!</p>
+            <Image
+              src={bg}
+              alt="Background for first card"
+              fill
+              className="rounded-[20px] object-cover z-0"
+              priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+            <div className="relative z-20">
+              <p className="font-bold text-3xl w-full pb-1 z-50 relative">Welcome back!</p>
+              <p className="z-50 relative">Nice to see you, Mark Johnson!</p>
+            </div>
           </div>
-          <Link href={"/"} className="flex flex-nowrap w-max items-center">
+          <Link href={"/"} className="flex flex-nowrap w-max items-center  z-50">
             Tap to record
             <p className="hover:translate-x-2 duration-300 pl-2">
               <MoveRight />
@@ -156,7 +167,9 @@ export default function ProfilePage() {
                       <p className="text-2xl font-bold">{car.value}</p>
                     </div>
                     <div className="w-full h-full overflow-hidden flex justify-between items-center mr-5 my-3">
-                      <LineChartForProfile />
+                      <Suspense fallback={<p>Loading...</p>}>
+                        <LineChartForProfile />
+                      </Suspense>
                     </div>
                   </div>
                 ))}

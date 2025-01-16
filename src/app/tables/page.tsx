@@ -80,7 +80,7 @@ const TableOne = (
           <TableCell>
             <div className="flex">
               {ele.status === "online" ? (
-                <p className="bg-green-500 mx-auto text-xs text-white border-2 border-transparent rounded-lg py-[3px] px-2">
+                <p className="bg-[#047857] mx-auto text-xs text-white border-2 border-transparent rounded-lg py-[3px] px-2">
                   {ele.status}
                 </p>
               ) : (

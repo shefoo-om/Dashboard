@@ -125,7 +125,7 @@ const FirstComponent = (
     <div className="MainCards min-h-[185px] h-max w-full flex flex-col justify-between items-center gap-y-5 p-7">
       <div className="h-max w-full flex justify-between items-center">
         <p className="headerTitle">Payment Method</p>
-        <button className="text-xs font-bold bg-bgBlue px-5 py-2 rounded-xl duration-300 hover:scale-110">ADD NEW CARD</button>
+        <button className="text-xs font-bold bg-[#0066cc] px-5 py-2 rounded-xl duration-300 hover:scale-110">ADD NEW CARD</button>
       </div>
       <div className="w-full flex flex-wrap justify-between items-center gap-3 gap-y-5">
         <div className="w-[48%] max-md:w-full border-[#4a5568] border-2 rounded-xl p-4 flex justify-between items-center">
@@ -242,7 +242,7 @@ export default function BillingPage() {
           <div className="max-h-[420px] max-[1439px]:max-h-[700px] max-lg:h-max overflow-hidden flex flex-wrap items-center gap-7 justify-center p-7">
             <div className="h-max w-full flex justify-between items-center">
               <p className="headerTitle">Invoices</p>
-              <button className="text-xs font-bold bg-bgBlue px-5 py-2 rounded-xl duration-300 hover:scale-110">VIEW ALL</button>
+              <button className="text-xs font-bold bg-[#0066cc] px-5 py-2 rounded-xl duration-300 hover:scale-110">VIEW ALL</button>
             </div>
             <ul className="w-full max-h-[350px] max-[1439px]:max-h-[650px] overflow-auto flex flex-col pb-20">
               <SecondComponent SecondComponent={InvoicesInformationDetails} />
