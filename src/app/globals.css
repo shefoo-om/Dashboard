@@ -195,7 +195,7 @@ nav {
 }
 
 .billingFirstCardBg {
-  background-image: url("../assets/billing/bg.png");
+  background-image: url("../assets/billing/bg.webp");
   background-size: cover;
   color: white;
   backdrop-filter: blur(120px);
@@ -203,14 +203,14 @@ nav {
 }
 
 .billingSecondCardBg {
-  background-image: url("../assets/billing/bg2.png");
+  background-image: url("../assets/billing/bg2.webp");
   background-size: cover;
   color: white;
   border-radius: 18px;
 }
 
 .billingSecondCardBg {
-  background-image: url("../assets/profile/bg3.png");
+  background-image: url("../assets/profile/bg3.webp");
   background-size: cover;
   color: white;
   border-radius: 18px;

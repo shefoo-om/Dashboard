@@ -1,7 +1,15 @@
-/* eslint-disable @next/next/no-img-element */
 import type { BillingInformationDetails, InvoicesInformationDetails, TransactionDetails } from "@/types/Billing"
 import { MoveDown, MoveUp, Pen, Trash } from "lucide-react"
-import lineImg from "@/assets/billing/lineImg.png"
+import lineImg from "@/assets/billing/lineImg.webp"
+import type { Metadata } from 'next'
+import Image from "next/image"
+import img1 from '../../assets/billing/bg.webp'
+import img2 from '../../assets/billing/bg2.webp'
+
+export const metadata: Metadata = {
+  title: 'Billing',
+  description: "the Billing page"
+}
 
 const InvoicesInformationDetails: InvoicesInformationDetails[] = [
   { "id": 1, "date": "March 01, 2020", "invoice_number": "#MS-415646", "amount": 180 },
@@ -39,17 +47,27 @@ const TransactionDetails: TransactionDetails[] = [
 
 const FirstComponent = (
   <div className="row-span-2 col-span-2 h-max flex flex-wrap justify-between items-center gap-4">
-    <div className="billingFirstCardBg h-[260px] flex-auto w-max max-[1439px]:w-full flex flex-col justify-between items-center p-7">
-      <div className="h-max w-full flex justify-between items-center">
+    <div className="h-[260px] flex-auto w-max max-[1439px]:w-full flex flex-col justify-between items-center p-7 relative bg-cover">
+      <Image
+        src={img1}
+        alt="Background for first card"
+        fill
+        className="rounded-[20px] object-cover" 
+        priority
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+      />
+      <div className="h-max w-full flex justify-between items-center z-10">
         <p className="headerTitle">Visa Gold</p>
         <div className="size-12">
           <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" color="#FFFFFF" style={{ color: "#FFFFFF" }} height="48px" width="48px" xmlns="http://www.w3.org/2000/svg">
-            <g><path fill="none" d="M0 0h24v24H0z"></path>
-              <path d="M12 6.654a6.786 6.786 0 0 1 2.596 5.344A6.786 6.786 0 0 1 12 17.34a6.786 6.786 0 0 1-2.596-5.343A6.786 6.786 0 0 1 12 6.654zm-.87-.582A7.783 7.783 0 0 0 8.4 12a7.783 7.783 0 0 0 2.728 5.926 6.798 6.798 0 1 1 .003-11.854zm1.742 11.854A7.783 7.783 0 0 0 15.6 12a7.783 7.783 0 0 0-2.73-5.928 6.798 6.798 0 1 1 .003 11.854z"></path></g>
+            <g>
+              <path fill="none" d="M0 0h24v24H0z"></path>
+              <path d="M12 6.654a6.786 6.786 0 0 1 2.596 5.344A6.786 6.786 0 0 1 12 17.34a6.786 6.786 0 0 1-2.596-5.343A6.786 6.786 0 0 1 12 6.654zm-.87-.582A7.783 7.783 0 0 0 8.4 12a7.783 7.783 0 0 0 2.728 5.926 6.798 6.798 0 1 1 .003-11.854zm1.742 11.854A7.783 7.783 0 0 0 15.6 12a7.783 7.783 0 0 0-2.73-5.928 6.798 6.798 0 1 1 .003 11.854z"></path>
+            </g>
           </svg>
         </div>
       </div>
-      <div className="h-max w-full flex flex-col justify-between items-start pt-8">
+      <div className="h-max w-full flex flex-col justify-between items-start pt-8 z-10">
         <p className="w-full text-2xl font-bold">7812   2139   0823   7916</p>
         <div className="w-full flex items-center gap-4 pt-3">
           <div className="flex flex-col">
@@ -65,16 +83,29 @@ const FirstComponent = (
       <div></div>
     </div>
     <div className="MainCards h-[260px] flex-auto max-[1439px]:w-full flex flex-col justify-between items-center p-7">
-      <div className="billingSecondCardBg w-full p-5 flex justify-between items-center mb-8">
-        <div className="flex flex-col">
+      <div className="w-full p-5 flex justify-between items-center mb-8 relative bg-cover">
+        <Image
+          src={img2}
+          alt="Background for first card"
+          fill
+          className="rounded-[20px] object-cover" 
+          priority
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
+        <div className="flex flex-col z-10">
           <p className="text-[10px] font-semibold">Credit Balance</p>
           <p className="text-4xl font-bold">$25,215</p>
         </div>
-        <div className="flex flex-col items-end gap-3">
+        <div className="flex flex-col items-end gap-3 z-10">
           <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" color="white" style={{ color: "white" }} height="18px" width="18px" xmlns="http://www.w3.org/2000/svg">
             <path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"></path>
           </svg>
-          <img src={lineImg.src} alt="" />
+          <Image
+            src={lineImg.src}
+            alt="just line"
+            width={28}
+            height={28}
+          />
         </div>
       </div>
       <span className="w-full m-0 text-[10px] text-secondColor font-medium">NEWEST</span>
